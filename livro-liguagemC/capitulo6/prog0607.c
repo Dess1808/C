@@ -3,6 +3,10 @@
 
 //debugar codigo!!
 
+/*
+    conceito do codigo 
+*/
+
 #define DM 3
 #define SPACE ' '
 
