@@ -8,4 +8,8 @@
 
 //declarando funções
 void Iniciador_Random();
+void Iniciador_Vetor(int v[NUMEROS]);
+int Ler_Numeros_Apostar();
+void Gerar(int *v, int n); //preciso testar
+void Apresentar(int resultado[]); 
 
