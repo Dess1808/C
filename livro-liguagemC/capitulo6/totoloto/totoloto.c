@@ -12,14 +12,20 @@ void geradorAleatorios(int *v, int ad);
 int main(void)
 {
     //valor apostar, dimensao
-    int apostaDimensao = get_int("Quantos números quer apostar? (0 - terminal): ");
+    int apostaDimensao = 0;
 
-    //variaveis controle + vetorAleatorio
-    int vetorAleatorio[apostaDimensao];
-
-    //controle principal
-    if(apostaDimensao != 0) 
+    do
     {
+        apostaDimensao = get_int("Quantos números quer apostar? (0 - terminal): ");
+    } while (apostaDimensao < 0 || apostaDimensao >= 49);
+    
+
+    //controle principal, se o valor inserido for 0, termina o programa
+    if(apostaDimensao != 0)  
+    {
+        //variaveis controle + vetorAleatorio
+        int vetorAleatorio[apostaDimensao];
+
         /*
             GERANDO ALEATORIO
         */
@@ -85,7 +91,7 @@ int main(void)
     }   
     else
     {
-        return 1;
+        return 1; //termina o programa
     }    
 }
 
