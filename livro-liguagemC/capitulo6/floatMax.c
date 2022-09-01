@@ -14,17 +14,20 @@ int main(void)
     int tamanho = get_int("tamanho: ");
     float arrayNumeros[tamanho];
 
+    //recebendo o valores float do usuario
     for(int i = 0; i < tamanho; i++)
     {
         arrayNumeros[i] = get_float("insira: ");
     }
 
+    //enviando para a funções
     float resultado = Max(arrayNumeros, tamanho);
     Imprimir(resultado);
 
     putchar('\n');
 }
 
+//fazendo o teste com array ja preenchido
 float Max(float arrayNumeros[], int tamanho)
 {   
     float maior;
@@ -37,7 +40,7 @@ float Max(float arrayNumeros[], int tamanho)
     return maior;
 }
 
-
+//output
 void Imprimir(float resultado)
 {
     printf("%.2f", resultado);
