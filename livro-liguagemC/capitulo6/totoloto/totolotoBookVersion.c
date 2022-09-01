@@ -18,7 +18,7 @@ void Apresentar(int resultado[]);
     executa a função
 */
 
-void Iniciador _Random()
+void Iniciador_Random()
 {
     long ultime;
     time(&ultime);
@@ -29,7 +29,7 @@ void Iniciador _Random()
 void Iniciador(int v[])
 {
     for(int i = 0; i < NUMEROS; i++)
-        v[i] = -;
+        v[i] = 0;
 }
 
 /*
@@ -43,9 +43,9 @@ int Ler_Numeros_Apostar()
 
     do
     {
-        printf("Quantos números quer apostar (0 - terminar): ");
+        printf("Quantos números quer apostar? minimo de 6 apostas (0 - terminar): ");
         scanf("%d", &n);
-    } while ((n < MIN_APOSTA || N > NUMEROS) && n != 0);
+    } while ((n < MINIMO_APOSTA || n > NUMEROS) && n != 0);
 
     return n;   
 }
@@ -91,7 +91,7 @@ void Apresentar(int resultado[])
 
 int main(void)
 {
-    int vetor[NUMEROS]
+    int vetor[NUMEROS];
     int quantidadeNumeros = 0; //quantidade de numeros para jogar no jogo - 6..49
 
     Iniciador_Random();
