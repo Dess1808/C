@@ -47,11 +47,11 @@ int Ler_Numeros_Apostar()
         scanf("%d", &n);
     } while ((n < MINIMO_APOSTA || n > NUMEROS) && n != 0);
 
-    return n;   
+    return n;
 }
 
 /*
-    Gera "n" numeros aleatorios e coloca a respectiva posição do vetor com o 
+    Gera "n" numeros aleatorios e coloca a respectiva posição do vetor com o
     valor 1 que indica que esse numeros foi selecionado
 */
 
@@ -62,10 +62,19 @@ void Gerar(int *v, int n)
     {
         indice = rand() % NUMEROS; //Devolve números aleatorios entre 0 e NUMEROS - 1, é sorteado um números pelo indice mesmo!!
         if(v[indice] == 0)
+        {
             v[indice] = 1;
+            //debug
+            //printf("%d", v[indice]);
+        }
         else
+        {
             i--;
+        }
     }
+
+    putchar('\n');
+
 }
 
 
@@ -73,15 +82,19 @@ void Gerar(int *v, int n)
     apresenta uma grade de numeros e o selecionados irão aparecer em formato de  XX.
 */
 
+/*
+
+*/
 void Apresentar(int resultado[])
 {
     for(int i = 0; i < NUMEROS; i++)
     {
+        //percorrendo o vetor resultado ja com os numeros sorteados
         if(resultado[i] == 0)
-            printf(" %2d", i + 1);
+            printf(" %2d", i + 1); //não foi selecionado
         else
-            printf(" XX");
-        
+            printf(" XX"); //foi selecionado
+
         if((i + 1) % NUMERO_LINHA == 0)
             putchar('\n');
     }
@@ -99,10 +112,10 @@ int main(void)
     {
         Iniciador(vetor); //iniciando o array com zero
 
-        //o retorno de ler_Numeros_Apostar 
+        //o retorno de ler_Numeros_Apostar
         if((quantidadeNumeros = Ler_Numeros_Apostar()) == 0)
             break;
-        
+
         Gerar(vetor, quantidadeNumeros); //Gera os numeros a apostar, não tem retorno
         Apresentar(vetor);
     }
