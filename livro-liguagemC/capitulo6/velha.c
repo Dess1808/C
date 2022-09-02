@@ -12,7 +12,7 @@ int main(void){
     for(i = 0; i < DM; i++){
         for(j = 0; j < DM; j++){
             /*
-                irar printar o valor que esta na matriz, 
+                irá printar o valor que esta na matriz, 
                 o proximo caracter será um espaço em branco ou um traço desenhando assim
                 a hash que caracteriza o jogo "#"
             */
