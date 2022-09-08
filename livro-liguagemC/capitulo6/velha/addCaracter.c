@@ -79,6 +79,7 @@ int main(void)
 
 }
 
+
 void ImprimeGrade(char v[DM][DM])
 {
     int linhaValor = 0;
