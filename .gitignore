@@ -54,4 +54,5 @@ dkms.conf
 #ignore personalizado
 *_out
 /libcs50-10.1.1
+/libcs50-11.0.1
 /.vscode
