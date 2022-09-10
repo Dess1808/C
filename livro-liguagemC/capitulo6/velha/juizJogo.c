@@ -27,9 +27,9 @@
 
 #define DM 3
 #define ESPACO ' '
-#define COUNTJOGADAS 3
+#define COUNTJOGADAS 9
 
-void JuizDoJogo(char v[DM][DM], bool finalizado);
+void JuizDoJogo(char v[DM][DM], char jogada);
 void velhaLimpa(char v[DM][DM]);
 void ImprimeGrade(char v[DM][DM]);
 
@@ -40,9 +40,10 @@ int main(void)
     int valorLinha = 0;
     int valorColuna = 0;
     int count = 0;
-    bool finalizado = false;
+    int finalizador = 0;
 
     velhaLimpa(velha);
+    ImprimeGrade(velha);
 
     do
     {
@@ -53,32 +54,35 @@ int main(void)
         //testar espaço para adicionar
         if(velha[valorLinha][valorColuna] == ESPACO)
         {
-            valorJogada = get_char("letra da jogada: ");    
-            velha[valorLinha][valorColuna] = toupper(valorJogada);
+            valorJogada = get_char("letra da jogada: "); 
+            valorJogada = toupper(valorJogada);   
+            velha[valorLinha][valorColuna] = valorJogada;
             count++;
         }
         else
         {
-            printf("local ja selecionado!!\n");
+            printf("local ja selecionado!!\n\n");
         }
         
         //mandar imprimir
         ImprimeGrade(velha);
-        putchar('\n');
-        
-        JuizDoJogo(velha, finalizado);
-        
-    } while (count < COUNTJOGADAS || finalizado == false);
+
+        //verificador, preciso investigar a questão de alteração de valor passando por uma função!!!
+        JuizDoJogo(velha, valorJogada);
+
+    } while (count < COUNTJOGADAS);
+
+    if(count == COUNTJOGADAS)
+        printf("deu velha\n");
+
 
     return 0;
 }
 
-void JuizDoJogo(char v[DM][DM], bool finalizado)
+void JuizDoJogo(char v[DM][DM], char jogada)
 {
-    //preciso testar todas a posições da lista
-    //teste de linhas
-    //rodar 3 vezes para testar uma linha
-    
+    //so recebo uma copia de referencias
+
     /*
     linhas:
     0,0 - 0,1 - 0,2;
@@ -95,9 +99,14 @@ void JuizDoJogo(char v[DM][DM], bool finalizado)
     0,0 - 1,1 - 2,2;
     */
 
-
     //melhorar a logica de verificação do juiz
+    /*
+    if(jogada == v[0][0] && jogada == v[0][1] && jogada == v[0][2])
+    {
         
+    }
+    */
+    
 }
 
 
@@ -128,6 +137,8 @@ void ImprimeGrade(char v[DM][DM])
             printf("\n  ------\n");
         }
     }
+
+    printf("\n\n");
 }
 
 void velhaLimpa(char v[DM][DM])
