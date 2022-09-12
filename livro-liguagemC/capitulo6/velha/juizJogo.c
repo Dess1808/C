@@ -29,7 +29,6 @@
 #define ESPACO ' '
 #define COUNTJOGADAS 9
 
-void JuizDoJogo(char v[DM][DM], char jogada);
 void velhaLimpa(char v[DM][DM]);
 void ImprimeGrade(char v[DM][DM]);
 
@@ -67,8 +66,47 @@ int main(void)
         //mandar imprimir
         ImprimeGrade(velha);
 
-        //verificador, preciso investigar a questão de alteração de valor passando por uma função!!!
-        JuizDoJogo(velha, valorJogada);
+        //linhas
+        if(jogada== v[0][0] && jogada== v[0][1] && jogada== v[0][2])
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;
+        }
+        else if(jogada== v[1][0] && jogada== v[1][1] && jogada== v[1][2])
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;
+        }
+        else if(jogada== v[2][0] && jogada== v[2][1] && jogada== v[2][2])
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;
+        }
+        else if(jogada== v[0][0] && jogada== v[1][0] && jogada== v[2][0]) //linhas
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;
+        }
+        else if(jogada== v[0][1] && jogada== v[1][1] && jogada== v[2][1])
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;
+        }
+        else if(jogada== v[0][2] && jogada== v[1][2] && jogada== v[2][2])
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;
+        }
+        else if(jogada== v[2][0] && jogada== v[1][1] && jogada== v[0][2]) //cross
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;   
+        }
+        else if(jogada== v[0][0] && jogada== v[1][1] && jogada== v[2][2])
+        {
+            printf("%c ganhou!\n", jogada);
+            return 0;
+        }
 
     } while (count < COUNTJOGADAS);
 
@@ -78,37 +116,6 @@ int main(void)
 
     return 0;
 }
-
-void JuizDoJogo(char v[DM][DM], char jogada)
-{
-    //so recebo uma copia de referencias
-
-    /*
-    linhas:
-    0,0 - 0,1 - 0,2;
-    1,0 - 1,1 - 1,2;
-    2,0 - 2,1 - 2,2;
-
-    coluna
-    0,0 - 1,0 - 2,0;
-    0,1 - 1,1 - 2,1;
-    0,2 - 1,2 - 2,2;
-
-    linhas cruzadas:
-    2,0 - 1,1 - 0,2;
-    0,0 - 1,1 - 2,2;
-    */
-
-    //melhorar a logica de verificação do juiz
-    /*
-    if(jogada == v[0][0] && jogada == v[0][1] && jogada == v[0][2])
-    {
-        
-    }
-    */
-    
-}
-
 
 void ImprimeGrade(char v[DM][DM])
 {
