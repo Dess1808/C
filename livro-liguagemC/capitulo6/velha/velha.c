@@ -17,6 +17,15 @@
    O - 79 decimal
 */
 
+#include<stdio.h>
+
+int main(void)
+{
+   //controlePlayer
+   //imprimir grade
+   //juizJogo
+}
+
 
 
 
