@@ -67,44 +67,44 @@ int main(void)
         ImprimeGrade(velha);
 
         //linhas
-        if(jogada== v[0][0] && jogada== v[0][1] && jogada== v[0][2])
+        if(valorJogada == velha[0][0] && valorJogada == velha[0][1] && valorJogada == velha[0][2])
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;
         }
-        else if(jogada== v[1][0] && jogada== v[1][1] && jogada== v[1][2])
+        else if(valorJogada == velha[1][0] && valorJogada == velha[1][1] && valorJogada == velha[1][2])
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;
         }
-        else if(jogada== v[2][0] && jogada== v[2][1] && jogada== v[2][2])
+        else if(valorJogada == velha[2][0] && valorJogada == velha[2][1] && valorJogada == velha[2][2])
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;
         }
-        else if(jogada== v[0][0] && jogada== v[1][0] && jogada== v[2][0]) //linhas
+        else if(valorJogada == velha[0][0] && valorJogada == velha[1][0] && valorJogada == velha[2][0]) //linhas
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;
         }
-        else if(jogada== v[0][1] && jogada== v[1][1] && jogada== v[2][1])
+        else if(valorJogada == velha[0][1] && valorJogada == velha[1][1] && valorJogada == velha[2][1])
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;
         }
-        else if(jogada== v[0][2] && jogada== v[1][2] && jogada== v[2][2])
+        else if(valorJogada == velha[0][2] && valorJogada == velha[1][2] && valorJogada == velha[2][2])
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;
         }
-        else if(jogada== v[2][0] && jogada== v[1][1] && jogada== v[0][2]) //cross
+        else if(valorJogada == velha[2][0] && valorJogada == velha[1][1] && valorJogada == velha[0][2]) //cross
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;   
         }
-        else if(jogada== v[0][0] && jogada== v[1][1] && jogada== v[2][2])
+        else if(valorJogada == velha[0][0] && valorJogada == velha[1][1] && valorJogada == velha[2][2])
         {
-            printf("%c ganhou!\n", jogada);
+            printf("%c ganhou!\n", valorJogada );
             return 0;
         }
 
