@@ -11,7 +11,7 @@ int main(void)
     string player1 = get_string("Player1: ");
     string player2 = get_string("Player2: ");
 
-    //recebendo valores de jogo
+    //recebendo valores de jogo e definido o jogo
     char player1Valor = toupper(get_char("qual letra deseja player %s? ", player1));
     char player2Valor;
     
