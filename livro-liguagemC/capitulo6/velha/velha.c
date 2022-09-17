@@ -31,7 +31,6 @@ void VelhaClean(char v[DM][DM]);
 void ImprimeVelha(char v[DM][DM]);
 void erro(string menssage);
 
-
 int main(void)
 {
    char velha[DM][DM];
@@ -42,9 +41,7 @@ int main(void)
    char player1Valor;
    char player2Valor;
    bool estadoSalvo = true;
-
-
-
+   
    //recebendo o nomes dos players
    string player1 = get_string("Player1: ");
    string player2 = get_string("Player2: ");
@@ -72,6 +69,7 @@ int main(void)
    //iniciando algumas variavies, utilizando o primeiro player como parametro
    char jogadaMomento = toupper(player1Valor);
    string nomePlayer = player1; 
+
 
    //input loop
    while(1)
