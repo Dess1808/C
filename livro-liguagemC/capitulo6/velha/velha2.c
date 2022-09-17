@@ -82,42 +82,42 @@ int main(void)
             //linhas
             if(jogadaMomento == velha[0][0] && jogadaMomento == velha[0][1] && jogadaMomento == velha[0][2])
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;
             }
             else if(jogadaMomento == velha[1][0] && jogadaMomento == velha[1][1] && jogadaMomento == velha[1][2])
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;
             }
             else if(jogadaMomento == velha[2][0] && jogadaMomento == velha[2][1] && jogadaMomento == velha[2][2])
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;
             }
             else if(jogadaMomento == velha[0][0] && jogadaMomento == velha[1][0] && jogadaMomento == velha[2][0]) //linhas
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;
             }
             else if(jogadaMomento == velha[0][1] && jogadaMomento == velha[1][1] && jogadaMomento == velha[2][1])
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;
             }
             else if(jogadaMomento == velha[0][2] && jogadaMomento == velha[1][2] && jogadaMomento == velha[2][2])
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;
             }
             else if(jogadaMomento == velha[2][0] && jogadaMomento == velha[1][1] && jogadaMomento == velha[0][2]) //cross
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;   
             }
             else if(jogadaMomento == velha[0][0] && jogadaMomento == velha[1][1] && jogadaMomento == velha[2][2])
             {
-                  printf("%c ganhou!\n", jogadaMomento );
+                  printf("%s ganhou!\n", nomePlayer );
                   return 0;
             }
 
