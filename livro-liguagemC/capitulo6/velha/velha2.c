@@ -18,7 +18,7 @@ int main(void)
    int count = 0;
    int coluna = 0;
    int linha = 0;
-   char jogada = 0;
+   //char jogada = 0;
    char player1Valor;
    char player2Valor;
    bool estadoSalvo = true;
@@ -51,13 +51,12 @@ int main(void)
    char jogadaMomento = toupper(player1Valor);
    string nomePlayer = player1; 
 
-
    //input loop
    while(1)
    {
       //entradas linha, coluna
       //recebe valor
-      printf("Vez do jogador %s\n", nomePlayer);
+      printf("Vez do jogador %s - %c\n", nomePlayer, jogadaMomento);
       linha = get_int("linha: ");
       coluna = get_int("coluna: ");
 
@@ -67,90 +66,77 @@ int main(void)
          //testando espaço em brancos
          if(velha[linha][coluna] == ESPACO)
          {
-            //recebendo os valores
-            jogada = get_char("Insira sua jogada jogada: ");
-            jogada = toupper(jogada);
+            //transforma para upcase
+            jogadaMomento = toupper(jogadaMomento);
 
-            //verificar de carecter correto
-            if(jogada == jogadaMomento)
+            //atribui na matriz 
+            velha[linha][coluna] = jogadaMomento;
+
+            //imprimir a velha atualizada
+            ImprimeVelha(velha);
+
+            /*
+               FAZER O TESTE DE WIN!
+            */
+
+            //linhas
+            if(jogadaMomento == velha[0][0] && jogadaMomento == velha[0][1] && jogadaMomento == velha[0][2])
             {
-               //transforma para upcase
-               jogada = toupper(jogada);
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;
+            }
+            else if(jogadaMomento == velha[1][0] && jogadaMomento == velha[1][1] && jogadaMomento == velha[1][2])
+            {
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;
+            }
+            else if(jogadaMomento == velha[2][0] && jogadaMomento == velha[2][1] && jogadaMomento == velha[2][2])
+            {
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;
+            }
+            else if(jogadaMomento == velha[0][0] && jogadaMomento == velha[1][0] && jogadaMomento == velha[2][0]) //linhas
+            {
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;
+            }
+            else if(jogadaMomento == velha[0][1] && jogadaMomento == velha[1][1] && jogadaMomento == velha[2][1])
+            {
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;
+            }
+            else if(jogadaMomento == velha[0][2] && jogadaMomento == velha[1][2] && jogadaMomento == velha[2][2])
+            {
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;
+            }
+            else if(jogadaMomento == velha[2][0] && jogadaMomento == velha[1][1] && jogadaMomento == velha[0][2]) //cross
+            {
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;   
+            }
+            else if(jogadaMomento == velha[0][0] && jogadaMomento == velha[1][1] && jogadaMomento == velha[2][2])
+            {
+                  printf("%c ganhou!\n", jogadaMomento );
+                  return 0;
+            }
 
-               //atribui na matriz 
-               velha[linha][coluna] = jogada;
-
-               //imprimir a velha atualizada
-               ImprimeVelha(velha);
-
-               /*
-                  FAZER O TESTE DE WIN!
-               */
-
-               //linhas
-               if(jogada == velha[0][0] && jogada == velha[0][1] && jogada == velha[0][2])
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;
-               }
-               else if(jogada == velha[1][0] && jogada == velha[1][1] && jogada == velha[1][2])
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;
-               }
-               else if(jogada == velha[2][0] && jogada == velha[2][1] && jogada == velha[2][2])
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;
-               }
-               else if(jogada == velha[0][0] && jogada == velha[1][0] && jogada == velha[2][0]) //linhas
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;
-               }
-               else if(jogada == velha[0][1] && jogada == velha[1][1] && jogada == velha[2][1])
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;
-               }
-               else if(jogada == velha[0][2] && jogada == velha[1][2] && jogada == velha[2][2])
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;
-               }
-               else if(jogada == velha[2][0] && jogada == velha[1][1] && jogada == velha[0][2]) //cross
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;   
-               }
-               else if(jogada == velha[0][0] && jogada == velha[1][1] && jogada == velha[2][2])
-               {
-                     printf("%c ganhou!\n", jogada );
-                     return 0;
-               }
-
-
-               //troca o estado da variavel controle "estado", utiliza-se o primeiro player como parametros
-               if(estadoSalvo)
-               {
-                  jogadaMomento = player2Valor;
-                  nomePlayer = player2;
-                  estadoSalvo = false;
-               }
-               else
-               {
-                  jogadaMomento = player1Valor;
-                  nomePlayer = player1;
-                  estadoSalvo = true;
-               }
-
-               //incrementando para a proxima jogada valida
-               count++;
+            //troca o estado da variavel controle "estado", utiliza-se o primeiro player como parametros
+            if(estadoSalvo)
+            {
+               jogadaMomento = player2Valor;
+               nomePlayer = player2;
+               estadoSalvo = false;
             }
             else
             {
-               erro("Valor inserido não é do jogador!");
+               jogadaMomento = player1Valor;
+               nomePlayer = player1;
+               estadoSalvo = true;
             }
+
+            //incrementando para a proxima jogada valida
+            count++;
          }  
          else
          {
