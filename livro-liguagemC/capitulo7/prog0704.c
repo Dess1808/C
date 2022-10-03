@@ -12,7 +12,7 @@ int main(void)
         //como inserir um caracter vazio????
         scanf("%s", nome);
 
-        if(nome[0] == '\0') //caracter "vazio"
+        if(nome[0] == '\0') //caracter "vazio", não estar funcionando
             break;
         else
             printf("nome inserido: %s\n", nome);
