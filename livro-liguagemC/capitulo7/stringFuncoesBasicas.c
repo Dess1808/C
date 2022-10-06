@@ -22,6 +22,7 @@ int main(void)
     printf("size nome %i\n", n);
     printf("size sobre nome %i\n", d);
 
+    //output com laço
     for(int i = 0, n = strlen(nome); i < n; i++)
         printf("%c", nome[i]);
     
