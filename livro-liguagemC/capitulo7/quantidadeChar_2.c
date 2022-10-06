@@ -1,5 +1,7 @@
 #include<stdio.h>
 
+//strlen
+
 int countChar(char *v);
 
 int main(void)
