@@ -1,45 +1,38 @@
 #include<stdio.h>
 #include<string.h>
+#include<cs50.h>
 
-char *strConcat(char *origin, char *destiny);
+//solução 1
+
+char *strConcat(char *origin, char *dest, char *destFull);
 
 int main(void)
 {
-    char *string1, *string2;
+    string string1 = get_string("string1: ");
+    string string2 = get_string("string2: ");
 
-    printf("string1: "); scanf("%s", string1);
-    printf("string2: "); scanf("%s", string2);
+    char stringFull[(strlen(string1) + strlen(string2))];
 
-    char *resultado = strConcat(string1, string2);
+    char *resultado = strConcat(string1, string2, stringFull);
 
     printf("%s\n", resultado);
     return 0;
 }
 
-char *strConcat(char *origin, char *destiny)
+char *strConcat(char *origin, char *dest, char *destFull)
 {
-    int i, j,len;
+    int i = 0;
+    int j = 0;
+    int len = 0;
+    int n = 0;
 
-    //preciso calcular o tamanho de origin para aumentar o size de destiny
+    for(j = 0, n = strlen(origin); j < n; j++)
+        destFull[j] = origin[j];
 
-    //somando os dois sizes
-    int sizeFull = (strlen(origin) + strlen(destiny));
+    for(i = 0, len = strlen(origin); dest[i]; i++, len++)
+        destFull[len] = dest[i];
+    
+    destFull[len] = '\0';
 
-    //size calculado
-    char destinyFull[sizeFull];
-
-    //atrinuindo origin
-    for(i = 0; origin[i]; i++)
-        destinyFull[i] = origin[i];
-
-
-    //concatenando no final da string destinyFull a string destiny
-    for(j = 0, len = strlen(origin); destiny[j]; j++, len++)
-        destinyFull[len] = destiny[j];
-
-
-    destinyFull[len] = '\0';
-
-    //debugar
-    return destinyFull;
+    return destFull;
 }
