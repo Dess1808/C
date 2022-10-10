@@ -19,7 +19,7 @@ int main(void)
     printf("%s\n", resultado);
     return 0;
 }
-
+    
 char *strConcat(char *origin, char *dest, char *destFull)
 {
     int i = 0;
