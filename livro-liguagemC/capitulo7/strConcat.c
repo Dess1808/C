@@ -13,6 +13,7 @@ int main(void)
 
     char stringFull[(strlen(string1) + strlen(string2))];
 
+    //e preciso enviar o vetor de destino fazio (stringFull)
     char *resultado = strConcat(string1, string2, stringFull);
 
     printf("%s\n", resultado);
