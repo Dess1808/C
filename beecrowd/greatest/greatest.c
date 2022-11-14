@@ -6,7 +6,9 @@ int Abs(int a, int b);
 
 int main(void)
 {
-    int a, b, c;
+    int a = 0;
+    int b = 0;
+    int c = 0;
 
     printf("a: "); scanf("%d", &a);
     printf("b: "); scanf("%d", &b);
