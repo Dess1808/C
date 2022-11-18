@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<cs50.h>
 
+/* String Count Char */
+
 char strcountc(char *exemplo, char ch);
 
 int main(void)
