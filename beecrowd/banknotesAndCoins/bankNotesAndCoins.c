@@ -123,6 +123,9 @@ int main(void)
         valor -= COIN005;
     }
 
+    //corrigir imprecisao com milesimo
+    valor += 0.001;
+
     //0.01
     while(valor >= COIN001)
     {
@@ -139,12 +142,12 @@ int main(void)
     printf("%d nota(s) de R$ 5.00\n", countCinco);
     printf("%d nota(s) de R$ 2.00\n", countDois);
     printf("MOEDAS:\n");
-    printf("%d nota(s) de R$ 1.00\n", count1);
-    printf("%d nota(s) de R$ 0.50\n", count050);
-    printf("%d nota(s) de R$ 0.25\n", count025);
-    printf("%d nota(s) de R$ 0.10\n", count010);
-    printf("%d nota(s) de R$ 0.05\n", count005);
-    printf("%d nota(s) de R$ 0.01\n", count001);
+    printf("%d moeda(s) de R$ 1.00\n", count1);
+    printf("%d moeda(s) de R$ 0.50\n", count050);
+    printf("%d moeda(s) de R$ 0.25\n", count025);
+    printf("%d moeda(s) de R$ 0.10\n", count010);
+    printf("%d moeda(s) de R$ 0.05\n", count005);
+    printf("%d moeda(s) de R$ 0.01\n", count001);
 
     return 0;
 }
