@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<cs50.h>
-#include<math.h> //nao reconhece!!
+#include<math.h>
 
 int main(void)
 {
