@@ -25,10 +25,18 @@ int main(void)
     }
     else if ((media >= 5.0) && (media <= 6.9)) //em exame
     {
+        //tratar entrada
+        
         printf("Aluno em Exame\n");
+        float nExame = 0;
+        
+        do
+        {
+            nExame = get_float("N exame: ");
+        } while (nExame == 0);
 
-        float nExame = get_float("N exame: ");
         float mediaExame = avaregeExame(nExame, media);
+        
 
         if (mediaExame >= 5.0)
         {
