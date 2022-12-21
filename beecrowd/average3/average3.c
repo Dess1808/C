@@ -2,7 +2,8 @@
 
 int main(void)
 {
-    double n1, n2, n3, n4, nExame;
+    double n1, n2, n3, n4;
+    double nExame = 0;
     int weight = 1 + 2 + 3 + 4;
 
     scanf("%lf %lf %lf %lf", &n1, &n2, &n3, &n4);
@@ -20,7 +21,15 @@ int main(void)
     else if ((media >= 5.0) && (media <= 6.9))
     {
         printf("Aluno em exame.\n");
-        scanf("%lf", &nExame); //como travar entradas somente de valores numericos
+
+        //como verificar?????
+        // do
+        // {
+        //     printf("Nota do exame: ");
+        //     scanf("%lf", &nExame);
+        //     printf("\n");
+        // } while (nExame == 0); 
+
 
         //nova media
         float mediaExame = (nExame + media) / 2;
