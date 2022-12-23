@@ -21,15 +21,7 @@ int main(void)
     else if ((media >= 5.0) && (media <= 6.9))
     {
         printf("Aluno em exame.\n");
-
-        //como verificar?????
-        // do
-        // {
-        //     printf("Nota do exame: ");
-        //     scanf("%lf", &nExame);
-        //     printf("\n");
-        // } while (nExame == 0); 
-
+        
         /*
             verificar parte
         */
