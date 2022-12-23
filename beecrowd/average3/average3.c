@@ -1,9 +1,9 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 int main(void)
 {
     double n1, n2, n3, n4;
-    double nExame = 0;
     int weight = 1 + 2 + 3 + 4;
 
     scanf("%lf %lf %lf %lf", &n1, &n2, &n3, &n4);
@@ -30,6 +30,17 @@ int main(void)
         //     printf("\n");
         // } while (nExame == 0); 
 
+        /*
+            verificar parte
+        */
+        char *nExameString;
+
+        do
+        {
+            printf("nota aluno:"); scanf("%s", nExameString);
+        } while (atof(nExameString) == 0.0);
+        
+        float nExame = atof(nExameString);
 
         //nova media
         float mediaExame = (nExame + media) / 2;
