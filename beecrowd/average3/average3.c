@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    double n1, n2, n3, n4;
+    double n1, n2, n3, n4, nExame;
     int weight = 1 + 2 + 3 + 4;
 
     scanf("%lf %lf %lf %lf", &n1, &n2, &n3, &n4);
@@ -11,31 +11,27 @@ int main(void)
     //media
     double media = (n1 * 2 + n2 * 3 + n3 * 4 + n4 * 1) / weight;
 
+    //mostrando a media final
+    printf("Media: %.1lf\n", media);
+
     //aprovado direto
     if (media >= 7.0)
     {
-        printf("Media: %.1f\n", media);
         printf("Aluno aprovado.\n");
     }
     //em exame
     else if ((media >= 5.0) && (media <= 6.9))
     {
         printf("Aluno em exame.\n");
-        
-        /*
-            verificar parte
-        */
-        char *nExameString;
 
-        do
-        {
-            printf("nota aluno:"); scanf("%s", nExameString);
-        } while (atof(nExameString) == 0.0);
-        
-        float nExame = atof(nExameString);
+        //recebendo a nota
+        scanf("%lf", &nExame);
+
+        //mostrando a nota do exame
+        printf("Nota do exame: %.1lf\n", nExame);
 
         //nova media
-        float mediaExame = (nExame + media) / 2;
+        float mediaExame = (nExame + media) / 2; 
 
         //aprovado no exame
         if (mediaExame >= 5.0)
@@ -49,12 +45,11 @@ int main(void)
         }
 
         //mostra media final do exame
-        printf("Media final: %.1f\n", mediaExame);
+        printf("Media final: %.1lf\n", mediaExame);
     }
     //reprovado direto
     else
     {
-        printf("Media: %.1f\n", media);
         printf("Aluno reprovado.\n");
     }
 
