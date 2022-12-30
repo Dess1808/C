@@ -4,7 +4,7 @@ int main(void)
 {
     //limitadores
     float origem = 0.0;
-    
+
     float x, y;
 
     //preciso tratar a entrada
@@ -38,6 +38,17 @@ int main(void)
     {
         printf("Q4\n");
     }
+    //eixos unicos negativos e positivos
+    else if (((x > origem) && (y == origem)) || ((x < origem) && (y == origem)) )
+    {
+        printf("Eixo X\n");
+    }
+    else 
+    {
+        printf("Eixo Y\n");
+    }
+
 
     return 0;
 }
+
