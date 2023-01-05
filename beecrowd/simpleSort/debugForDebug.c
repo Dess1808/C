@@ -41,7 +41,7 @@ int *Ascendente(int *abc, int s)
         //carga inicial
         menorAtual = abc[i];
 
-        for (int j = i + 1; j < newSize; j++)
+        for (int j = i + 1; j <= newSize; j++)
         {
             if (menorAtual > abc[j])
             {
@@ -56,7 +56,7 @@ int *Ascendente(int *abc, int s)
         {
             auxiliar = abc[i];
             abc[i] = menorAtual;
-            abc[ultimaPosicaMenor] = abc[i];
+            abc[ultimaPosicaMenor] = auxiliar;
 
             trocar = 0; //restado;
         }
