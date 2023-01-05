@@ -34,7 +34,7 @@ int main(void)
                 trocar = 1;
             }
         }
-
+        
         //so trocar quando realmente houver movimentacao
         if (trocar)
         {
