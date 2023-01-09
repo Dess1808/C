@@ -24,7 +24,7 @@ int main(void)
     scanf("%f%f%f", &a, &b, &c);
 
     //logica principal
-    if((AbsoluteSubtraido(a, b) < a) && (a < (b + c)))
+    if((AbsoluteSubtraido(b, c) < a) && (a < (b + c)))
     {
         //perimeter area
         float perimeter = a + b + c;
