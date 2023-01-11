@@ -30,7 +30,9 @@
 #define SIZE 3
 
 double *Decrescente(double *abc, int s);
+char *AnguloShow(double a, double b, double c);
 double Potencia(int p, double x);
+
 
 int main(void)
 {
@@ -55,6 +57,77 @@ int main(void)
     double c = ordenado[2];
 
     //classificando os triangulo
+    if (a < (b + c)) //verificar tambem
+    {
+        //eh triangulo
+
+        //equilatero
+        if ((a == b) && (b == c))
+        {
+            //definicao angulo triangulo equilatero
+            char *angulo = AnguloShow(a, b, c); 
+
+            //angulo
+            printf("%s\n", angulo);
+
+            //retangulo
+            printf("TRIANGULO EQUILATERO\n");
+        }
+        else if ((a == b) || (b == c) || (a == c))
+        {
+            //definicao angulo triangulo isosceles
+            char *angulo = AnguloShow(a, b, c); 
+
+            //output angulo
+            printf("%s\n", angulo);
+
+            //output isosceles
+            printf("TRIANGULO ISOSCELES\n");
+        }
+        else 
+        {
+            //definicao angulo triangulo esca
+            char *angulo = AnguloShow(a, b, c); 
+
+            //angulo
+            printf("%s\n", angulo);
+
+            //escaleno
+            printf("TRIANGULO ESCALENO\n");
+        }
+    }
+    else 
+    {
+        //nao forma triangulo
+        printf("NAO FORMA TRIANGULO\n");
+    }
+
+    return 0;
+}
+
+char *AnguloShow(double a, double b, double c)
+{
+    char *r;
+
+    //verificar logica
+
+    //retangulo
+    if (Potencia(2,a) == (Potencia(2,b) + Potencia(2,c)))
+    {
+        r = "TRIANGULO RETANGULO";
+    }
+    else if (Potencia(2,a) > (Potencia(2,b) + Potencia(2,c)))
+    {
+        //obtusangulo
+        r = "TRIANGULO OBUSANGULO";
+    }
+    else
+    {
+        //acutangulo
+        r = "TRIANGULO ACUTANGULO";
+    }
+
+    return r;
 }
 
 double Potencia(int p, double x)
@@ -83,7 +156,7 @@ double *Decrescente(double *abc, int s)
 
         for(int j = i + 1; j <= newSize; j++)
         {
-            //so executado de for maior
+            //so executa se menor
             if(maiorAtual > abc[j])
             {
                 maiorAtual = abc[j];
