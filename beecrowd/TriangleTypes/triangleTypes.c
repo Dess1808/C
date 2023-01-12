@@ -67,17 +67,19 @@ int main(void)
             //retangulo
             if (a2 == (b2 + c2))
             {
-                r = "TRIANGULO RETANGULO";
+                printf("TRIANGULO RETANGULO\n");
             }
             else if (a2 > (b2 + c2))
             {
                 //obtusangulo
-                r = "TRIANGULO OBUSANGULO";
+                printf("TRIANGULO OBTUSANGULO\n");
+
             }
             else
             {
                 //acutangulo
-                r = "TRIANGULO ACUTANGULO";
+                printf("TRIANGULO ACUTANGULO\n");
+
             }
             
             //retangulo
@@ -89,17 +91,19 @@ int main(void)
             //retangulo
             if (a2 == (b2 + c2))
             {
-                r = "TRIANGULO RETANGULO";
+                printf("TRIANGULO RETANGULO\n");
             }
             else if (a2 > (b2 + c2))
             {
                 //obtusangulo
-                r = "TRIANGULO OBUSANGULO";
+                printf("TRIANGULO OBTUSANGULO\n");
+
             }
             else
             {
                 //acutangulo
-                r = "TRIANGULO ACUTANGULO";
+                printf("TRIANGULO ACUTANGULO\n");
+
             }
 
             //output isosceles
@@ -111,17 +115,19 @@ int main(void)
             //retangulo
             if (a2 == (b2 + c2))
             {
-                r = "TRIANGULO RETANGULO";
+                printf("TRIANGULO RETANGULO\n");
             }
             else if (a2 > (b2 + c2))
             {
                 //obtusangulo
-                r = "TRIANGULO OBUSANGULO";
+                printf("TRIANGULO OBTUSANGULO\n");
+
             }
             else
             {
                 //acutangulo
-                r = "TRIANGULO ACUTANGULO";
+                printf("TRIANGULO ACUTANGULO\n");
+
             }
 
             //escaleno
