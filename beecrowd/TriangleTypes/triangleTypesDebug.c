@@ -25,7 +25,6 @@
 */
 
 #include<stdio.h>
-//#include<math.h> //clang inutil nao pega
 
 #define SIZE 3
 
@@ -109,14 +108,18 @@ char *AnguloShow(double a, double b, double c)
 {
     char *r;
 
+    double a2 = Potencia(2,a);
+    double b2 = Potencia(2,b);
+    double c2 = Potencia(2,c);
+
     //verificar logica
 
     //retangulo
-    if (Potencia(2,a) == (Potencia(2,b) + Potencia(2,c)))
+    if (a2 == (b2 + c2))
     {
         r = "TRIANGULO RETANGULO";
     }
-    else if (Potencia(2,a) > (Potencia(2,b) + Potencia(2,c)))
+    else if (a2 > (b2 + c2))
     {
         //obtusangulo
         r = "TRIANGULO OBUSANGULO";
@@ -157,7 +160,7 @@ double *Decrescente(double *abc, int s)
         for(int j = i + 1; j <= newSize; j++)
         {
             //so executa se menor
-            if(maiorAtual > abc[j])
+            if(maiorAtual < abc[j])
             {
                 maiorAtual = abc[j];
                 ultimaPosicaoMaior = j;
