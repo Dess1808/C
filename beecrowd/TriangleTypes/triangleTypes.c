@@ -129,9 +129,6 @@ int main(void)
                 printf("TRIANGULO ACUTANGULO\n");
 
             }
-
-            //escaleno
-            printf("TRIANGULO ESCALENO\n");
         }
     }
     else 
