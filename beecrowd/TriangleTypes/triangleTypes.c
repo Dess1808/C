@@ -13,7 +13,7 @@ int main(void)
 
     //ordenando, ordem decrescente
     int newSize = SIZE - 1;
-    int maiorAtual = 0;
+    double maiorAtual = 0;
     int trocar = 0;
     int ultimaPosicaoMaior = 0;
     int auxiliar = 0;
@@ -55,9 +55,9 @@ int main(void)
         //eh um triangulo
 
         //definindo quadrados
-        double a2 = pow(2,a);
-        double b2 = pow(2,b);
-        double c2 = pow(2,c);
+        double a2 = pow(a,2);
+        double b2 = pow(b,2);
+        double c2 = pow(c,2);
 
 
         //equilatero
