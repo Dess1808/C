@@ -24,7 +24,7 @@ int main(void)
         for(int j = i + 1; j <= newSize; j++)
         {
             //so executa se menor
-            if(maiorAtual > abc[j])
+            if(maiorAtual < abc[j])
             {
                 maiorAtual = abc[j];
                 ultimaPosicaoMaior = j;
