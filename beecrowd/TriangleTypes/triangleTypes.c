@@ -134,7 +134,7 @@ int main(void)
     else 
     {
         //nao triangulo
-        printf("NAO FORMA UM TRIANGULO\n");
+        printf("NAO FORMA TRIANGULO\n");
     }
 
     return 0;
