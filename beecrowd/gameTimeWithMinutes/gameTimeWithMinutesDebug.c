@@ -12,13 +12,10 @@
         calcular diferenca de horaStart e horaEnd
         calcular diferenca de minutoStart e minutoEnd (obs: se resultado for == a 60, o valor final deve ser 0)
 
-    logica versao 1.3: 
-    transformar hora em minutos, somar + minutos e calcular diferenca
-    calcular diferenca com 1440 (24h)
-    o resultado sera o minutos obs(se > 60, entao, dividir resultado por 60 e o resultado sera o valor em minuto)
-    dividir por 60 para obter o valor em hora
-    
-    Obs: um pouco estranho mais pode funcionar
+    logica versao 1.3: - FUNCIONOU
+    transformar hora em minutos, somar + minutos, da hora-minuto incial e hora-minuto final
+    calcular diferenca com 1440 (24h), durationHora sera a diferenca menor 1440(24h) divido por 60, para obter o valor em hora
+    durationMinutos sera a diferenca de "minutos" menos 60
 
 */
 
