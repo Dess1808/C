@@ -27,6 +27,7 @@
 #define SEVEN 7
 #define FOUR 4
 
+void show(double newSalary, double moneyEarned, int percentage);
 
 int main(void)
 {
@@ -43,27 +44,52 @@ int main(void)
         newSalary = salary + moneyEarned;
 
         //ouput 
-        printf("Novo Salario: %.2lf\n", newSalary);
-        printf("Reajuste ganho: %.2lf\n", moneyEarned);
-        printf("Em percentual: %d %%\n", FIFTEEN);
+        show(newSalary, moneyEarned, FIFTEEN);
     }
     else if ((salary >= 400.01) && (salary <= 800.00))
     {
         //12%
-    } çll
+        moneyEarned = (TWELVE * salary) / 100;
+        newSalary = salary + moneyEarned;
+
+        //ouput 
+        show(newSalary, moneyEarned, TWELVE);
+    } 
     else if ((salary >= 800.01) && (salary <= 1200.00))
     {
         //10%
+        moneyEarned = (TEN * salary) / 100;
+        newSalary = salary + moneyEarned;
+
+        //ouput 
+        show(newSalary, moneyEarned, TEN);
     }
     else if ((salary >= 1200.01) && (salary <= 2000.00))
     {
         //7%
+        moneyEarned = (SEVEN * salary) / 100;
+        newSalary = salary + moneyEarned;
+
+        //ouput 
+        show(newSalary, moneyEarned, SEVEN);
     }
     else 
     {
         //%4
+        moneyEarned = (FOUR * salary) / 100;
+        newSalary = salary + moneyEarned;
+
+        //ouput 
+        show(newSalary, moneyEarned, FOUR);
     }
 
-    return 0;
-    
+    return 0;   
+}
+
+
+void show(double newSalary, double moneyEarned, int percentage)
+{
+    printf("Novo Salario: %.2lf\n", newSalary);
+    printf("Reajuste ganho: %.2lf\n", moneyEarned);
+    printf("Em percentual: %d %%\n", percentage);
 }
