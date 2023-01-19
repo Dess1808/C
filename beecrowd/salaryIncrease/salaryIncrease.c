@@ -6,18 +6,18 @@
 #define SEVEN 7
 #define FOUR 4
 
-void Show(double salary, double moneyEarned, int porcentage);
+void Show(float salary, float moneyEarned, int porcentage);
 
 int main(void)
 {
     //control
-    double salary;
+    float salary;
 
     //input
-    scanf("%lf", &salary);
+    scanf("%f", &salary);
 
     //control two
-    double moneyEarned, newSalary;
+    float moneyEarned, newSalary;
 
     //calc
     if ((salary >= 0) && (salary <= 400.00)) 
@@ -35,7 +35,7 @@ int main(void)
         moneyEarned = (TWELVE * salary) / 100;
         newSalary = salary + moneyEarned;
 
-        //ouput 
+        //ouput 1
         Show(newSalary, moneyEarned, TWELVE);
     } 
     else if ((salary >= 800.01) && (salary <= 1200.00))
@@ -56,7 +56,7 @@ int main(void)
         //ouput 
         Show(newSalary, moneyEarned, SEVEN);
     }
-    else 
+    else if (salary > 2000.00) 
     {
         //%4
         moneyEarned = (FOUR * salary) / 100;
@@ -70,7 +70,7 @@ int main(void)
 }
 
 //print ouput
-void Show(double newSalary, double moneyEarned, int percentage)
+void Show(float newSalary, float moneyEarned, int percentage)
 {
     printf("Novo salario: %.2lf\n", newSalary);
     printf("Reajuste ganho: %.2lf\n", moneyEarned);
