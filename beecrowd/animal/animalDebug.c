@@ -53,7 +53,7 @@ int main(void)
             {
                 Show(aguia);
             }
-            else if (strcmp(carnivoro, onivoro) == 0) //onivoro
+            else if (strcmp(carOni, onivoro) == 0) //onivoro
             {
                 Show(pombo);
             }
