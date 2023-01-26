@@ -28,8 +28,7 @@
 
     HIPOTESE 4:
 
-    https://github.com/marcelothebuilder/uri/blob/master/beginner/URI_1051.c
-
+    utilizar valores de porcentagem fixa, e somar esses valores tirando a diferenca com o salario inserio
 */
 
 #include<stdio.h>
