@@ -43,39 +43,103 @@
 
     formula principal horas:
     tirar a diferenca 
-        diferencaHora (horaSegundoStart + horaSegundoMinuto + segundosEnd) - (horaSegundoEnd + minutoSegundoEnd + segundoEnd)
+        diferencaHora (horaSegundoStart + horaSegundoMinuto + segundosStart) - (horaSegundoEnd + minutoSegundoEnd + segundoEnd)
         diferencaMinuto (horaSegundoMinuto + segundosEnd) - (minutoSegundoEnd + segundoEnd)
         diferencaSegundos (segundo) - (segundo)
         
         calculando hora 
+            if(diferencaX < 0)
+                xFinal = (HORASEGUNDO - deferencaX) - HORASEGUNDO / valorRelogio;
+            else 
+                xFinal = HORASEGUNDO - diferencaX / valorRelogio;
+    
         calculando minuto
+            mesmo calculo
         calculando segundo
+            mesmo calculo 
+        
+    Obs: 
+    se hora 24, minuto 60 e segundo 60
+    significa que temos um dia completo
+        zerar hora, minuto e segundo, e somar a diferenca absoluta de "dias"
+
+
 
     obs: o evento e de apenas 1 mes???
     calcular a quantidade de dias entre os dois dias informados
     valor absoluto entre os dias -1
 
-    OBS:se a diferenca entre horas bater 24h significa e a diferenca entre dias for 0, signfica que bateu somente 1dia
-    porem se a diferenca de dias for diferente de 0, siginificao que devo contar mais + dia completo
+    OBS: se a diferenca de dias for 0 e a diferenca de horas der 24h, significa que bateu um dia,
+    devo zerar as horas e informar apenas os dias
+    formula para dia:
+    (diaStart - diaEnd) - 1 vai ser a diferenca entre total de dias
+
+    obervacoes: 
 */
 
 #include<stdio.h>
-#include<cs50.h>
 
-#define HORASEGUNDO 86400
-#define MINUTOSEGUNDO 3600
+#define HOURINSECOND 3600
+#define MINUTESECOND 60
+#define SECOND 60
+#define TWENTYFOURINSECOND 86400
 
 int main(void)
 {  
     //variable control
-    int dia, hora, minuto, segundo = 0;
+    int dayStart = 0;
+    int hourStart = 0;
+    int minuteStart = 0;
+    int secondStart = 0;
 
-    //input
+    int dayEnd = 0;
+    int hourEnd = 0;
+    int minuteEnd = 0;
+    int secondEnd = 0;
+
+    int hourFinal = 0;
+    int minutefinal = 0;
+    int secondFinal = 0;
+    
+    //input start
     printf("Dia ");
-    scanf("%d", &dia);
-    scanf("%d%d%d", &hora, &minuto, &segundo);
+    scanf("%d", &dayStart);
+    scanf("%d%d%d", &hourStart, &minuteStart, &secondStart);
+
+    //input end
+    printf("Dia ");
+    scanf("%d", &dayEnd);
+    scanf("%d%d%d", &hourEnd, &minuteEnd, &secondEnd);
+
+    //obtendo diferenca de hora, minuto e segundo
+    int hourDifference = ((hourStart * HOURINSECOND) + (minuteStart * MINUTESECOND) + secondStart) - ((hourEnd * HOURINSECOND) + (minuteEnd * MINUTESECOND) + secondEnd);
+    int minuteDifference = ((minuteStart * MINUTESECOND) + secondStart) - ((minuteEnd * MINUTESECOND) + secondEnd);
+    int secondDifference = secondStart - secondEnd;
+
+    //calculo hora, minuto e segundo
+    //hour
+    if(hourDifference < 0)
+        hourFinal = ((TWENTYFOURINSECOND - hourDifference) - TWENTYFOURINSECOND) / 3600;
+    else 
+        hourFinal = (TWENTYFOURINSECOND - hourDifference) / 3600;        
+
+    //minute
+    if(minuteDifference < 0)
+        minutefinal = ((MINUTESECOND - minuteDifference) - MINUTESECOND) / 60;
+    else 
+        minutefinal = (MINUTESECOND - minuteDifference) / 60;
+    
+    //second final
+    if(secondDifference < 0)
+        secondFinal = (SECOND - secondDifference) - SECOND;
+    else 
+        secondFinal = SECOND - secondDifference; 
+
+    //verificar situacao de minuto e segundos
 
 
+    /*feito as diferencas com calculo final, partir para a verificao de valore*/
+    printf("%d\n%d\n%d\n", hourFinal, minutefinal, secondFinal);
 
     return 0; 
 }
