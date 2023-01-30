@@ -84,6 +84,8 @@
 #define SECOND 60
 #define TWENTYFOURINSECOND 86400
 
+int Abs(int x);
+
 int main(void)
 {  
     //variable control
@@ -116,7 +118,9 @@ int main(void)
     int minuteDifference = ((minuteStart * MINUTESECOND) + secondStart) - ((minuteEnd * MINUTESECOND) + secondEnd);
     int secondDifference = secondStart - secondEnd;
 
-    //calculo hora, minuto e segundo
+    /*
+        CALCULANDO E TRANSFORMANDO (HORA, MINUTO E SEGUNDO)
+    */
     //hour
     if(hourDifference < 0)
         hourFinal = ((TWENTYFOURINSECOND - hourDifference) - TWENTYFOURINSECOND) / 3600;
@@ -135,11 +139,33 @@ int main(void)
     else 
         secondFinal = SECOND - secondDifference; 
 
-    //verificar situacao de minuto e segundos
+    /*
+        VERIFICAR SITUAÇÃO DE HORA, MINUTOS E SEGUNDOS
+    */
 
+    if (hourFinal == 24)
+        hourFinal = 0;
+    
+    if (minutefinal == 60)
+        minutefinal = 0;
+
+    if (secondFinal == 60)
+        secondFinal = 0;
+
+
+    //calc day final 
+    int dayFinal = Abs(dayStart - dayEnd);
 
     /*feito as diferencas com calculo final, partir para a verificao de valore*/
     printf("%d\n%d\n%d\n", hourFinal, minutefinal, secondFinal);
 
     return 0; 
+}
+
+int Abs(int x)
+{
+    if(x < 0)
+        return x *= -1;
+    else 
+        return x;
 }
