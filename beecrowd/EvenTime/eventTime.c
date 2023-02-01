@@ -26,12 +26,10 @@ int main(void)
     int dayFinal = 0;
 
     //input start
-    //printf("Dia ");
     scanf("%d", &dayStart);
     scanf("%d%d%d", &hourStart, &minuteStart, &secondStart);
 
     //input end
-    //printf("Dia ");
     scanf("%d", &dayEnd);
     scanf("%d%d%d", &hourEnd, &minuteEnd, &secondEnd);
 
