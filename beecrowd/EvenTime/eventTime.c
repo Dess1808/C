@@ -26,14 +26,12 @@ int main(void)
     int dayFinal = 0;
 
     //input start
-    //printf("Dia ");
-    scanf("Dia %d", &dayStart);
-    scanf("%d : %d : %d", &hourStart, &minuteStart, &secondStart);
+    scanf("%d", &dayStart);
+    scanf("%d%d%d", &hourStart, &minuteStart, &secondStart);
 
     //input end
-    //printf("Dia ");
-    scanf("Dia %d", &dayEnd);
-    scanf("%d: %d : %d", &hourEnd, &minuteEnd, &secondEnd);
+    scanf("%d", &dayEnd);
+    scanf("%d%d%d", &hourEnd, &minuteEnd, &secondEnd);
 
      //obtendo diferenca de hora, minuto e segundo
     int hourDifference = ((hourStart * HOURINSECOND) + (minuteStart * MINUTESECOND) + secondStart) - ((hourEnd * HOURINSECOND) + (minuteEnd * MINUTESECOND) + secondEnd);
