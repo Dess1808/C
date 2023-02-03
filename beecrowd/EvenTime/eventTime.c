@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include<stdoi.h>
 
 #define HOURINSECOND 3600
 #define MINUTESECOND 60
@@ -33,55 +33,7 @@ int main(void)
     scanf("%d", &dayEnd);
     scanf("%d%d%d", &hourEnd, &minuteEnd, &secondEnd);
 
-     //obtendo diferenca de hora, minuto e segundo
-    int hourDifference = ((hourStart * HOURINSECOND) + (minuteStart * MINUTESECOND) + secondStart) - ((hourEnd * HOURINSECOND) + (minuteEnd * MINUTESECOND) + secondEnd);
-    int minuteDifference = ((minuteStart * MINUTESECOND) + secondStart) - ((minuteEnd * MINUTESECOND) + secondEnd);
-    int secondDifference = secondStart - secondEnd;
 
-    //differences
-    //hour
-    if(hourDifference < 0)
-        hourFinal = ((TWENTYFOURINSECOND - hourDifference) - TWENTYFOURINSECOND) / 3600;
-    else 
-        hourFinal = (TWENTYFOURINSECOND - hourDifference) / 3600;       
-
-    //minute
-    if(minuteDifference < 0)
-        minutefinal = ((SIXTYINSECOND - minuteDifference) - SIXTYINSECOND) / 60;
-    else 
-        minutefinal = (SIXTYINSECOND - minuteDifference) / 60;
-    
-    //second final
-    if(secondDifference < 0)
-        secondFinal = (SECOND - secondDifference) - SECOND;
-    else 
-        secondFinal = SECOND - secondDifference;
-
-    //hora verification
-    if (hourFinal == 24)
-        hourFinal = 0;
-    
-    //minute verification 
-    if (minutefinal == 60)
-        minutefinal = 0;
-
-    //second verification
-    if (secondFinal == 60)
-        secondFinal = 0;   
-
-    //calc day
-    if(dayStart > dayEnd)
-        dayFinal = dayStart - dayEnd;
-    else 
-        dayFinal = dayEnd - dayStart;
-        
-    //resolvendo diferenca de dias
-    if (dayFinal != 0) 
-        dayFinal--;
-
-    //add + um dia se em horas der 24h
-    if ((hourFinal == 0) && (minutefinal == 0) && (secondFinal == 0))
-        dayFinal++;
 
     //output
     printf("%d dia(s)\n", dayFinal);
