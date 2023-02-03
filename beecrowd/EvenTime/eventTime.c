@@ -1,10 +1,10 @@
-#include<stdoi.h>
+#include<stdio.h>
 
-#define HOURINSECOND 3600
-#define MINUTESECOND 60
+#define MINUTEHOUR 1440
+#define MINUTE 60
 #define SECOND 60
-#define TWENTYFOURINSECOND 86400
-#define SIXTYINSECOND 3600
+
+int Abs(int x);
 
 int main(void)
 {
@@ -33,11 +33,65 @@ int main(void)
     scanf("%d", &dayEnd);
     scanf("%d%d%d", &hourEnd, &minuteEnd, &secondEnd);
 
+    //calcular junto com minuto
+    int hourDif = ((hourStart * 60) + minuteStart) - ((hourEnd * 60) + minuteEnd);
+    
+    //calcular somente minutos
+    int minuteDif = minuteStart - minuteEnd;
 
+    //calcular somento segundo
+    int secondDif = secondStart - secondEnd;
 
+    //difference day
+    dayFinal = Abs(dayStart - dayEnd);
+
+    if(dayFinal != 0)
+        dayFinal -= 1;
+
+    //logics
+    //HOUR
+    if(hourDif < 0)
+        hourFinal = ((MINUTEHOUR - hourDif) - MINUTEHOUR) / 60;
+    else 
+        hourFinal = (MINUTEHOUR - hourDif) / 60;
+    
+    //MINUTE
+    if(minuteDif < 0)
+        minutefinal = (MINUTE - minuteDif) - MINUTE;
+    else 
+        minutefinal = MINUTE - minuteDif;
+    
+    //SECOND
+    if(secondDif < 0)
+        secondFinal = (SECOND - secondDif) - SECOND;
+    else 
+        secondFinal = SECOND - secondDif;
+     
+    //tratamentos horas
+    if(hourFinal == 24)
+        hourFinal = 0;
+    
+    if(minutefinal == 60)
+        minutefinal = 0;
+    
+    if(secondFinal == 60)
+        secondFinal = 0;
+    
+    //tratamento de dias
+    if((hourFinal == 0) && (minutefinal == 0))
+        dayFinal += 1;
+    
     //output
     printf("%d dia(s)\n", dayFinal);
     printf("%d Hora(s)\n%d minuto(s)\n%d segundo(s)\n", hourFinal, minutefinal, secondFinal);
 
     return 0; 
+}
+
+int Abs(int x)
+{
+    if(x < 0)
+        return x *= -1;
+    else 
+        return x;
 }
