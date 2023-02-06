@@ -88,7 +88,7 @@ int main(void)
     
     //output
     printf("%d dia(s)\n", dayFinal);
-    printf("%d Hora(s)\n%d minuto(s)\n%d segundo(s)\n", hourFinal, minutefinal, secondFinal);
+    printf("%d hora(s)\n%d minuto(s)\n%d segundo(s)\n", hourFinal, minutefinal, secondFinal);
 
     return 0; 
 }
