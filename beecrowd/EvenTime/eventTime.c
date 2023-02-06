@@ -25,13 +25,18 @@ int main(void)
 
     int dayFinal = 0;
 
+    //strings
+    char diaStart[4];
+    char diaEnd[4];
+    char dpIStart[2], dpIIStart[2], dpIEnd[2], dpIIEnd[2];
+
     //input start
-    scanf("%d", &dayStart);
-    scanf("%d%d%d", &hourStart, &minuteStart, &secondStart);
+    scanf("%s%d", diaStart, &dayStart);
+    scanf("%d%s%d%s%d",&hourStart, dpIStart, &minuteStart, dpIIStart, &secondStart);
 
     //input end
-    scanf("%d", &dayEnd);
-    scanf("%d%d%d", &hourEnd, &minuteEnd, &secondEnd);
+    scanf("%s%d", diaEnd, &dayEnd);
+    scanf("%d%s%d%s%d", &hourEnd, dpIEnd, &minuteEnd, dpIIEnd, &secondEnd);
 
     //calcular junto com minuto
     int hourDif = ((hourStart * 60) + minuteStart) - ((hourEnd * 60) + minuteEnd);
