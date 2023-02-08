@@ -38,10 +38,10 @@ int main(void)
     scanf("%d", &y);
 
     //difference, verificar calculo
-    //loopControl = x - y;
+    loopControl = (x - y) - 1; //nao estamos contanto com x e y, somente o que esta "entre" 
 
     //control number incremetation less
-    numberControl = y;
+    numberControl = y + 1;
 
     //main logic
     for (int i = 0; i < loopControl; i++)
@@ -56,4 +56,6 @@ int main(void)
 
     //output 
     printf("%d\n", sumOdd);
+
+    return 0;
 }
