@@ -2,9 +2,8 @@
     input persinalizado < 1000
     para cada caso inserido  X (-107 < X < 107).
 */
-
-#include<stdio.h>
 #include<math.h>
+#include<stdio.h>
 
 int main(void)
 {
