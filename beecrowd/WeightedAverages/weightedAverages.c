@@ -1,6 +1,6 @@
 /*
     main formule
-    ((numbers[j] * 2) + (numbers[j+1] * 3) + (numbers[j+2] * 5)) / 3 
+    ((numbers[j] * 2) + (numbers[j+1] * 3) + (numbers[j+2] * 5)) / weight
 */
 
 #include<stdio.h>
