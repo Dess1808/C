@@ -12,9 +12,8 @@ int main(void)
     int n = 0;
     int difference = 0;
     int numberControl = 0;
-
     int countSize = 0;
-    
+
 
     //verificar loop
     while(controlLoop)
@@ -23,15 +22,21 @@ int main(void)
         scanf("%d %d", &m, &n);
 
         //check flux main
-        if ((m > 0) || (n > 0))
+        if ((m > 0) && (n > 0))
         {
             countSize++;
+
+            //alocacao dinamica??
         }
-        else 
-        {    
-            //controlLoop = 0;
+        else
+        {
+            controlLoop = 0;
         }
     }
+
+    
+
+
 
     return 0;
 }
