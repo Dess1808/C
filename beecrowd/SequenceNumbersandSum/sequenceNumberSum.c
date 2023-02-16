@@ -12,8 +12,11 @@ int main(void)
     int n = 0;
     int difference = 0;
     int numberControl = 0;
+
+    int countSize = 0;
     
 
+    //verificar loop
     while(controlLoop)
     {
         //input
@@ -22,37 +25,12 @@ int main(void)
         //check flux main
         if ((m > 0) || (n > 0))
         {
-            //check difference count
-            if ((m - n) < 0)
-            {
-                difference = (n - m) + 1;
-                numberControl = m;
-            }
-            else
-            {
-                difference = (m - n) + 1;
-                numberControl = n;
-            } 
-
-            //restart variable control of sum
-            int sumNumber = 0;
-
-            //output sequence number
-            for (int i = 0; i < difference; i++)
-            {
-                printf("%d ", numberControl);
-
-                sumNumber += numberControl;
-                numberControl++;    
-            }
-
-            //output sum
-            printf("Sum = %d\n", sumNumber);
-       }
-       else 
-       {    
-            controlLoop = 0;
-       }
+            countSize++;
+        }
+        else 
+        {    
+            //controlLoop = 0;
+        }
     }
 
     return 0;
