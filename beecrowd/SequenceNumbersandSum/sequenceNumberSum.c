@@ -19,9 +19,9 @@ int main(void)
         //input
         scanf("%d %d", &m, &n);
 
-       //check flux main
-       if ((m > 0) || (n > 0))
-       {
+        //check flux main
+        if ((m > 0) || (n > 0))
+        {
             //check difference count
             if ((m - n) < 0)
             {
