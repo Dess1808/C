@@ -7,7 +7,6 @@
 int main(void)
 {
     //control variable
-    int controlLoop = 1;
     int m = 0;
     int n = 0;
     int difference = 0;
@@ -17,7 +16,7 @@ int main(void)
 
 
     //verificar loop
-    while(controlLoop)
+    while(1)
     {
         //input
         scanf("%d %d", &m, &n);
@@ -51,11 +50,11 @@ int main(void)
             }
 
             //output sum
-            printf("Sum = %d\n", sumAll);
+            printf("Sum=%d\n", sumAll);
         }
         else
         {
-            controlLoop = 0;
+            break;
         }
     }
 
