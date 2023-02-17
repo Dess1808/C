@@ -2,7 +2,7 @@
     para o Binary search funcionar, e preciso alinhar a sequencia de numeros primeiro!
 
     worst-case-scenario = O(log N)
-    best-case-scenario = (n)
+    best-case-scenario = (n)  
 */
 
 #include<stdio.h>
