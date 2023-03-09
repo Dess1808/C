@@ -3,7 +3,7 @@
 #define ALCOHOL 1
 #define GASOLINE 2
 #define DIESEL 3
-#define END 4 
+#define END 4
 
 void ShowFuelType(int ac, int gc, int dc);
 
@@ -18,27 +18,27 @@ int main(void)
 
     while(1)
     {
-        scanf("%d\n", &option);
+        scanf("%d", &option);
 
         switch (option)
         {
         case ALCOHOL:
             alcoholCount += 1;
             break;
-        
+
         case GASOLINE:
             gasolineCount += 1;
             break;
-        
+
         case DIESEL:
             dieselCount += 1;
             break;
-        
-        case END: //verificar !!!
+
+        case END:
             //output
             ShowFuelType(alcoholCount, gasolineCount, dieselCount);
             return 0;
-        
+
         default:
             break;
         }
