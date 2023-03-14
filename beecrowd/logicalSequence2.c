@@ -19,13 +19,22 @@ int main(void)
         for (int i = 0; i < x; i++)
         {
             count++;
-            printf("%d ", count);
 
-            if (count == y)
+            if (count < y)
             {
+                //output main
+                printf("%d", count);
+
+                //blank
+                if (i != (x - 1))
+                    printf(" ");
+            }
+            else // == y
+            {
+                printf("%d", count);
                 putchar('\n');
                 return 0;
-            }        
+            }      
         }
 
         //newline
