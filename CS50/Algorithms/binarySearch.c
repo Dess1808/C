@@ -33,6 +33,7 @@ int main(void)
 
     int doors[] = {6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 23, 25, 30};
     
+    //size of array
     int nSize = sizeof(doors);
 
     printf("size doors is %d\n", nSize);
