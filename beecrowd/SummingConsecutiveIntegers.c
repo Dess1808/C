@@ -5,18 +5,28 @@ int main(void)
 {
     int n = 0;
     int a = 0;
+    int resul = 0;
 
     //input without condition
     scanf("%d", &a);
-
+    
+    
     do
     {
         //input with condition
-        scanf("%d", &n); 
+        scanf("%d", &n);
     } while ((n <= 0));
 
     //calc
-    printf("%d\n", (a + n) + n);
+    while(n)
+    {
+        resul += a++; //somando o a n vezes porem, com + 1
+        n--; //control repetition
+    }
+
+    //output 
+    printf("%d\n", resul);
 
     return 0;
 }
+
