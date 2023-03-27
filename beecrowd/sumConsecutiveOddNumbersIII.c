@@ -7,7 +7,7 @@
 
 #include<stdio.h>
 
-void Show(int s);
+int SumOddNumbers(int x, int y);
 
 int main(void)
 {
@@ -39,26 +39,23 @@ int main(void)
             //atualizando para o proximo numero impar
             x++;
             printf("%d\n", SumOddNumbers(x, y));
-        }
-    }
-}
-
-void Show(int s)
-{
-    printf("%d\n", s);
-}
+        }//end if
+    }//end for
+}//end main
 
 int SumOddNumbers(int x, int y)
 {
     //control variable
 
     //reset variable
-    countOdd = x;
+    int countOdd = x;
+    int sumOddX = 0;
+    int control = 0;
 
     while(1)
     {
         //validation numbers
-        if ((countOdd % 2) != 2)
+        if ((countOdd % 2) != 0)
         {
             //sum all odds
             sumOddX += countOdd;
@@ -76,7 +73,7 @@ int SumOddNumbers(int x, int y)
         //base case
         if (control == y)
         {
-            Show(sumOddX);
-            break;
+            return sumOddX;
         }
+    }
 }
