@@ -27,8 +27,8 @@ int main(void)
     scanf("%d %d %lf %lf", &pa, &pb, &g1, &g2);
 
     //calc pa and pb
-    resultPa = ((pa * g1) / 100) + pa;
-    resultPb = ((pb * g2) / 100) + pb;
+    resultPa = (((double)pa * g1) / 100) + pa;
+    resultPb = (((double)pb * g2) / 100) + pb;
 
     //population increse result
     popIncrese = (int) resultPb - (int) resultPa;
