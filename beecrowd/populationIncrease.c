@@ -16,7 +16,7 @@ int main(void)
   //controle variable
   int t = 0;
   int pa, pb, popIncrese = 0;
-  float g1, g2, resultPa, resultPb = 0.0;
+  double g1, g2, resultPa, resultPb;
 
   //input count
   scanf("%d", &t);
@@ -24,7 +24,7 @@ int main(void)
   for (int i = 0; i < t; i++)
   {
     //input 
-    scanf("%d %d %f %f", &pa, &pb, &g1, &g2);
+    scanf("%d %d %lf %lf", &pa, &pb, &g1, &g2);
 
     //calc pa and pb
     resultPa = ((pa * g1) / 100) + pa;
