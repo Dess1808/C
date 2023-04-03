@@ -3,8 +3,10 @@
  *      (n - 1)! mod n;
  * codigo:
  *      factorial(n - 1) % n; 
+ * status: NAO FUNCIONA
  * 
  * HIPOTE 2: fazer a contagem do divisores de n, se maior que 3 nao e um numero primo
+ * status: FUNCIONA
 */
 
 #include<stdio.h>
