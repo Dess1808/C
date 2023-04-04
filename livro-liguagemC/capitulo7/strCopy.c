@@ -7,7 +7,7 @@ int main(void)
 {
     char *nome;
     printf("nome: "); scanf("%s", nome);
-    
+
     int sizeNome = strlen(nome);
     char nomeCopy[sizeNome]; //precisa de uma tamanho definido quando for utilizar, tirando a excessão do printf
 
@@ -23,7 +23,7 @@ char *strCopy(char *orig, char *dest)
     for(i = 0; orig[i]; i++)
         dest[i] = orig[i]; //caracter por caracter
 
-    dest[i] = '\0';
+    dest[i] = '\0'; //delimidator
 
     return dest; //retornando uma string
 }
