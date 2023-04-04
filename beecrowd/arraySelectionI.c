@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+//utilizar defines para deixar o codigo mais dinamico
 #define SIZE 100
 
 int main(void)
