@@ -13,7 +13,7 @@ double SumOrAverage(int line, char t, double m[SIZE][SIZE]);
 
 int main(void)
 {
-    //controle variable
+    //controle variable, array bidimensional
     double m[SIZE][SIZE];
     int line = 0;
     char t;
