@@ -7,7 +7,7 @@
 #include<stdio.h>
 
 //global CONST
-const int SIZE = 2;
+const int SIZE = 12;
 
 double SumOrAverage(int line, char t, double m[SIZE][SIZE]);
 
