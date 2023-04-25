@@ -13,6 +13,7 @@
 
 #include<stdio.h>
 #include<cs50.h>
+#include<string.h>
 
 int strCompara(char *s1, char *s2);
 
@@ -21,8 +22,9 @@ int main(void)
     string nome1;
     string nome2;
     string continuar;
-    char *yes = "yes";
-    char *no = "no";
+
+    string yes = "yes";
+    string no = "no";
 
     while(1)
     {
@@ -39,9 +41,11 @@ int main(void)
         continuar = get_string("continuar? ");
 
         //condition break
-        if (continuar == yes)
+        if (strcmp(continuar, yes) == 0)
             continue;
-        else if (continuar == no)
+        else if (strcmp(continuar, no) == 0)
+            break;
+        else   
             break;
     }
     
