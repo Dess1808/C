@@ -24,10 +24,10 @@ int main(void)
     char *yes = "yes";
     char *no = "no";
 
-    do
+    while(1)
     {
-        scanf("%s", nome1);
-        scanf("%s", nome2);
+        nome1 = get_string("nome1: ");
+        nome2 = get_string("nome2: ");
 
         if (strCompara(nome1, nome2) == 0)
             printf("igual\n");
@@ -38,8 +38,15 @@ int main(void)
 
         continuar = get_string("continuar? ");
 
-    } while ((continuar == yes) || (continuar == no));
+        //condition break
+        if (continuar == yes)
+            continue;
+        else if (continuar == no)
+            break;
+    }
     
+
+    return 0;
 }
 
 int strCompara(char *s1, char *s2)
