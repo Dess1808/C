@@ -110,11 +110,15 @@ void Show(int n, int matrix[n][n])
     {
         for (int j = 0; j < n; j++)
         {
-            printf("%3d", matrix[i][j]);
-
-            //space
-            if (j != n - 1)
-                printf("_");
+            if (j == 0)
+            {
+                //first line
+                printf("%3d", matrix[i][j]);
+            }
+            else 
+            {
+                printf("%4d", matrix[i][j]);
+            }
         }
 
         putchar('\n');
