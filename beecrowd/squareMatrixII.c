@@ -1,5 +1,10 @@
 /*
     imprimir na diagonal
+
+    posicoes:
+    1 - 0,0
+    2 - 0,1
+    3 - 1,0
 */
 
 #include<stdio.h>
@@ -11,12 +16,15 @@ int main(void)
 {
     //control variable
     int n = 0;
-    int newSize = 0;
-
+    int newSize = 0;    
+    
     //position variables
     int linePosition = 0;
     int columnPosition = 0;
     int value = 0;
+    int countControlColumn = 0;
+    int newSizeRight = 0;
+    int newSizeLeft = 0;
 
     do
     {
@@ -29,21 +37,42 @@ int main(void)
         //matrix create
         int matrix[n][n];
 
-        //control condition
-        
-        //manipular index de forma matematica
+        //atribuitions sizes
+        newSize = n;
+        newSizeRight = n;
+        newSizeLeft = 0;
 
-        //repetition main
-        for (int i = 0; i < newSize; i++) //line
+        //columnLeft, columnRight
+
+        for (int i = 0; i < newSize; i++)//line
         {
-            for (int j = 0; j < newSize; i++) //column
-            {
-                matrix[linePosition][columnPosition] = value;
+            //left
+            for (int k = 0; k < newSizeLeft; k++)//column
+            {   
+                matrix[i][columnLeft] = valueLeft;
+
+                columnLeft++;
+                valueLeft--;
             }
+
+
+            //right
+            for (int j = 0; j < newSizeRight; j++)//column 
+            {
+                matrix[i][columnRight] = valueRight;
+
+                columnPosition++;
+                valueRight++;
+            }
+            
+            //update variables
+            controlValueLeft++; 
+            valueLeft = controlValueLeft;
+
         }
 
 
-        control++;
+
     } 
     while (n != 0);
     
