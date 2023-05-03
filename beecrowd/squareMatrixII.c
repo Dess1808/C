@@ -1,10 +1,5 @@
 /*
-    imprimir na diagonal
-
-    posicoes:
-    1 - 0,0
-    2 - 0,1
-    3 - 1,0
+    inserido da esquerda para a direita
 */
 
 #include<stdio.h>
