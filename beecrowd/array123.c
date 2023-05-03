@@ -35,13 +35,11 @@ int main(void)
     int n = 0;
     int sizeAux = 0;
 
-    do
+    //input with condition 
+    while(scanf("%d", &n) != EOF) //end of file - caracterisita da linguagem
     {
         //reset variable
         sizeAux = 0;
-
-        //input
-        scanf("%d", &n);
 
         //array bid create
         int array123[n][n];
@@ -73,9 +71,7 @@ int main(void)
 
         //output
         Show(n, array123);
-
-    } while (n != EOF); //eof - end file, verificar esse end file 
-    
+    }
 
     return 0;
 }
