@@ -2,11 +2,13 @@
      - cada valor da matrix sera ele mesmo multiplicado por 2
 
      - apartir da segunda linha o primeiro valor do index 0 sera o segunda valor da linha anterior
+
+     - para saber a quantidade de digitos apenas divida por 10 e conte quantas vezes foi divido
 */
 
 #include<stdio.h>
 
-void Show(int n, int matrix[n][n]);
+void Show(int n, int tabulation,int matrix[n][n]);
 
 int main(void)
 {
@@ -21,7 +23,7 @@ int main(void)
         //reset variable
         value = 1;
         valueAux = 0;
-        tabulation = 0;
+        tabulation = 1;
 
         //input
         scanf("%d", &n);
@@ -40,34 +42,56 @@ int main(void)
             {
                 matrix[i][j] = value;
 
-                value *= 2;
-
                 //second value
                 if (j == 1)
                     valueAux = value;
+
+                //double value
+                value *= 2;
             }
 
             //update value with second value
             value = valueAux;
         }
 
+        //get last value
+        int tabulationDiv = matrix[n - 1][n - 1];
+
         //for tabulation
-    
+        while(1)
+        {
+            tabulationDiv /= 10;
+
+            if (tabulationDiv != 0)
+                tabulation++;
+            else
+                break;
+        }
+        
+        printf("%d\n", tabulation);
+
         //output
-        Show(n, matrix);
+        Show(n, tabulation, matrix);
+
+        putchar('\n');
     }
 
     return 0;
 }
 
-void Show(int n, int matrix[n][n])
+void Show(int n, int tabulation ,int matrix[n][n])
 {
     for (int i = 0, size = n; i < size; i++)//row
     {
         for (int j = 0, size = n; j < size; j++) //column
         {   
-            printf("%*d", matrix[i][j]);
+            if (j == 0)
+                printf("%*d",tabulation ,matrix[i][j]);
+            else
+                printf(" %*d",tabulation ,matrix[i][j]);
         }
+
+        putchar('\n');
     }
 }
 
