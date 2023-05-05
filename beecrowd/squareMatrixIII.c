@@ -4,6 +4,8 @@
      - apartir da segunda linha o primeiro valor do index 0 sera o segunda valor da linha anterior
 
      - para saber a quantidade de digitos apenas divida por 10 e conte quantas vezes foi divido
+
+    - subir para o beecrowd
 */
 
 #include<stdio.h>
