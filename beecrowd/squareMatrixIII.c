@@ -52,8 +52,7 @@ int main(void)
         }
 
         //for tabulation
-        
-
+    
         //output
         Show(n, matrix);
     }
@@ -64,10 +63,11 @@ int main(void)
 void Show(int n, int matrix[n][n])
 {
     for (int i = 0, size = n; i < size; i++)//row
-        {
-            for (int j = 0, size = n; j < size; j++) //column
-            {   
-                printf("%*d", matrix[i][j]);
-            }
+    {
+        for (int j = 0, size = n; j < size; j++) //column
+        {   
+            printf("%*d", matrix[i][j]);
         }
+    }
 }
+
