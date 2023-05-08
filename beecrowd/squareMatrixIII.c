@@ -69,8 +69,6 @@ int main(void)
             else
                 break;
         }
-        
-        printf("%d\n", tabulation);
 
         //output
         Show(n, tabulation, matrix);
