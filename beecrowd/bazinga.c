@@ -31,15 +31,12 @@
 #include<stdio.h>
 #include<string.h>
 
-int const SIZEARRAY = 10;
-int const SIZEWORD = 20;
-
 void Show(char *s1, int r);
 
 int main(void)
 {
     //control variable center
-    char bazingaArray[SIZEARRAY][SIZEWORD] = {"tesourapapel", "tesouralagarto", "papelrocha", "papelSpock", "rochalagarto", "rochatesoura", "lagartospock", "lagartopapel", "spocktesoura", "spockrocha"}; 
+    char bazingaArray[10][20] = {"tesourapapel", "tesouralagarto", "papelpedra", "papelSpock", "pedralagarto", "rochatesoura", "lagartoSpock", "lagartopapel", "spocktesoura", "spockpedra"}; 
     char sheldon[10];
     char raj[10];
     char *game;
@@ -66,7 +63,7 @@ int main(void)
             game = strcat(sheldon, raj);
 
             //loop for bazinga
-            for (int i = 0, size = SIZEARRAY; i < size; i++)
+            for (int i = 0, size = sizeof(bazingaArray); i < size; i++)
             {
                 if (strcmp(game, bazingaArray[i]) == 0)
                 {
