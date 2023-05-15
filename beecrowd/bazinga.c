@@ -36,7 +36,6 @@ void Show(char *s1, int r);
 int main(void)
 {
     //control variable center
-    char bazingaArray[10][20] = {"tesourapapel", "tesouralagarto", "papelpedra", "papelSpock", "pedralagarto", "rochatesoura", "lagartoSpock", "lagartopapel", "spocktesoura", "spockpedra"}; 
     char sheldon[10];
     char raj[10];
     char *game;
@@ -51,31 +50,39 @@ int main(void)
     do
     {
         //reset variable
-        rajTrapaceou = 1;
 
         //input games option
         scanf("%s%s", sheldon, raj);
         
-        //if main DEBUGAR !!!
+        //if main DEBUGAR !!! verificar logica desses ifs
         if (strcmp(sheldon, raj) != 0)//not iquals
         {
             //concat of sheldon and raj
             game = strcat(sheldon, raj);
 
-            //loop for bazinga
-            for (int i = 0, size = sizeof(bazingaArray); i < size; i++)
+            //selection test
+            if ((strcmp(game, "tesourapapel")) || (strcmp(game, "tesouralagarto")))
             {
-                if (strcmp(game, bazingaArray[i]) == 0)
-                {
-                    Show("Bazinga!", countCase); 
-                    rajTrapaceou = 0;
-                    break;
-                }      
+                Show("Bazinga!", countCase);
             }
+               
+            if ((strcmp(game, "papelpedra")) || (strcmp(game, "papelSpock")))
+                Show("Bazinga!", countCase);
 
-            //condition for raj
-            if (rajTrapaceou)
-                Show("Raj Trapacou!", countCase);
+            if ((strcmp(game, "pedralagarto")) || (strcmp(game, "pedratesoura")))
+                Show("Bazinga!", countCase);
+
+            if ((strcmp(game, "lagartospock")) || (strcmp(game, "lagartopapel")))
+                Show("Bazinga!", countCase);
+
+             if ((strcmp(game, "Spockpedra")) || (strcmp(game, "Spocktesoura")))
+             {
+                Show("Bazinga!", countCase);
+             }
+             else 
+             {
+                Show("Raj trapacou!", countCase);
+             }   
         } 
         else 
         {
