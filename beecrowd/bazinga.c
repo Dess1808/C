@@ -61,28 +61,7 @@ int main(void)
             game = strcat(sheldon, raj);
 
             //selection test
-            if ((strcmp(game, "tesourapapel")) || (strcmp(game, "tesouralagarto")))
-            {
-                Show("Bazinga!", countCase);
-            }
-               
-            if ((strcmp(game, "papelpedra")) || (strcmp(game, "papelSpock")))
-                Show("Bazinga!", countCase);
-
-            if ((strcmp(game, "pedralagarto")) || (strcmp(game, "pedratesoura")))
-                Show("Bazinga!", countCase);
-
-            if ((strcmp(game, "lagartospock")) || (strcmp(game, "lagartopapel")))
-                Show("Bazinga!", countCase);
-
-             if ((strcmp(game, "Spockpedra")) || (strcmp(game, "Spocktesoura")))
-             {
-                Show("Bazinga!", countCase);
-             }
-             else 
-             {
-                Show("Raj trapacou!", countCase);
-             }   
+            
         } 
         else 
         {
