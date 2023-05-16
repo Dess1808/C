@@ -42,7 +42,8 @@ int main(void)
 
     int t = 0;
     int countCase = 1;
-    int rajTrapaceou = 1;
+    int casee = 1;
+    int rajCheated = 1;
 
     //input t times
     scanf("%d", &t);
@@ -50,6 +51,7 @@ int main(void)
     do
     {
         //reset variable
+        rajCheated = 1;
 
         //input games option
         scanf("%s%s", sheldon, raj);
@@ -61,7 +63,42 @@ int main(void)
             game = strcat(sheldon, raj);
 
             //selection test
+            if ((strcmp(game, "tesourapapel") == 0) || (strcmp(game, "tesouralagarto") == 0))
+            {
+                Show("Bazinga!", casee);
+                rajCheated = 0;
+            }
+                
+
+            if ((strcmp(game, "papelpedra") == 0) || (strcmp(game, "papelSpock") == 0))
+            {
+                Show("Bazinga!", casee);
+                rajCheated = 0;
+            }
+                
             
+            if ((strcmp(game, "pedralagarto") == 0) || (strcmp(game, "pedratesoura") == 0))
+            {
+                Show("Bazinga!", casee);
+                rajCheated = 0;
+            }
+
+            if ((strcmp(game, "lagartoSpock") == 0) || (strcmp(game, "lagartopapel") == 0))
+            {
+                Show("Bazinga!", casee);
+                rajCheated = 0;
+            }
+
+            if ((strcmp(game, "Spocktesoura") == 0) || (strcmp(game, "Spockpedra") == 0))
+            {
+                Show("Bazinga!", casee);
+                rajCheated = 0;
+            }
+
+
+            //control for Raj
+            if (rajCheated)
+                Show("Raj trapaceou!", casee);
         } 
         else 
         {
@@ -71,9 +108,6 @@ int main(void)
         countCase++;
                
     } while (countCase <= t);
-    
-
-    
 
     return 0;
 }
