@@ -17,6 +17,10 @@
     calculo o resto com o valor absoluto de divisor, esse sera o resultado apresentado
 
     https://www.cuemath.com/numbers/euclids-division-algorithm/
+
+    entao teria duas condições 
+
+    a = b * q + r && 0<= r < b
 */
 
 
@@ -50,16 +54,27 @@ int main(void)
         hcf = divider * quocient + rest;
 
         //test for equal
-        if (rest == 0)
+        if ((rest >= 0) && (rest < Abs(divider)))
         {
-            printf("%d\n", quocient);
-            break;
+            if(hcf == dividendAux)
+            {
+                printf("%d\n", quocient);
+                break;
+            }
         }
-        
+            
         //new values
         dividend = divider;
         divider = rest;
     }
     
     return 0;
+}
+
+int Abs(int x)
+{
+    if (x < 0)
+        return x *= -1;
+    else
+        return x;
 }
