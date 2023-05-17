@@ -15,6 +15,8 @@
 
     para o resto:
     calculo o resto com o valor absoluto de divisor, esse sera o resultado apresentado
+
+    https://www.cuemath.com/numbers/euclids-division-algorithm/
 */
 
 
