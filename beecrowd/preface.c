@@ -46,26 +46,7 @@ int main(void)
     //verificar bug
     while(1)
     {
-        //control variable
-        quocient = dividend/divider;
-        rest = dividend%divider;
-
-        //euclide division
-        hcf = divider * quocient + rest;
-
-        //test for equal
-        if ((rest >= 0) && (rest < Abs(divider)))
-        {
-            if(hcf == dividendAux)
-            {
-                printf("%d\n", quocient);
-                break;
-            }
-        }
-            
-        //new values
-        dividend = divider;
-        divider = rest;
+        
     }
     
     return 0;
