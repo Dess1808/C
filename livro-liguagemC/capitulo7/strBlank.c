@@ -1,45 +1,70 @@
 /*
-  adicionar espacos em branco em uma palavra  
+  adicionar espacos em branco em uma palavra
 */
 
 #include<stdio.h>
 #include<string.h>
 #include<cs50.h>
 
-char *strBlank(char *s, char *blankWord);
+const int SIZE = 100;
+
+void fillNull(char w[SIZE]);
+char *strBlank(char *wbl, char *w);
+
 
 int main(void)
 {
-    //control variable
-    char *word;
-    
+    char word[SIZE];
+
+    //fillNUll
+    fillNull(word);
+
     scanf("%s", word);
 
     int newSize = strlen(word) * 2;
+    char wordWithBlank[newSize];
 
-    //precisa ser defindo se for retornado
-    char blankWord[newSize];
+    fillNull(wordWithBlank);
 
-    //output
-    printf("%s\n", strBlank(word, blankWord));
+    printf("%s\n", strBlank(wordWithBlank, word));
+
+
+    putchar('\n');
+
 
     return 0;
 }
 
-char *strBlank(char *s, char *blankWord)
+void fillNull(char w[SIZE])
 {
-    int origin = 0;
-
-    for (int i = 0; s[origin] != '\0'; i+=2)
+    for (int i = 0; i < SIZE; i++)
     {
-        blankWord[i] = s[origin];
-        
-        //utilizando array original para determinar espacos
-        if (s[origin + 1] != '\0')
-            blankWord[i+1] = ' ';
+        w[i] = '\0';
+    }
+}
 
+char *strBlank(char *wbl, char *w)
+{
+    int origin, blankPosition = 0;
+
+    //hipotes 1
+    for (int i = 0; w[origin] != '\0'; i++)
+    {
+        wbl[i] = w[origin];
+
+        //skip space blank;
+        wbl[++i] = '_';
+
+        //next origin
         origin++;
     }
 
-    return blankWord;
+
+    //getttin last position
+    blankPosition = strlen(wbl);
+
+    //lat position
+    wbl[blankPosition - 1] = '\0';
+
+    return wbl;
 }
