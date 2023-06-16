@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 
+//depreciado
+//refatorar
 char *strCopy(char *orig, char *dest);
 
 int main(void)
