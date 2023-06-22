@@ -8,63 +8,64 @@
 
 const int SIZE = 100;
 
-void fillNull(char w[SIZE]);
 char *strBlank(char *wbl, char *w);
-
 
 int main(void)
 {
     char word[SIZE];
 
-    //fillNUll
-    fillNull(word);
-
+    //input
     scanf("%s", word);
 
-    int newSize = strlen(word) * 2;
+    int newSize = (strlen(word) * 2) - 1;
+
     char wordWithBlank[newSize];
 
-    fillNull(wordWithBlank);
+    //debug
+    /*
+    Detalhe, apenas retornar o array result com o %s o printf
+    retorna lixo de memoria, mesmo preenchendo o array para evitar
+    isso, 
+    */
+    char *result = strBlank(wordWithBlank, word);
 
-    printf("%s\n", strBlank(wordWithBlank, word));
-
+    //output
+    printf("%s\n", result);
 
     putchar('\n');
-
 
     return 0;
 }
 
-void fillNull(char w[SIZE])
-{
-    for (int i = 0; i < SIZE; i++)
-    {
-        w[i] = '\0';
-    }
-}
-
 char *strBlank(char *wbl, char *w)
 {
-    int origin, blankPosition = 0;
+    int origin = 0;
+    int blank = 0;
+
+    //gettting new size double
+    int sizeBlank = (strlen(w) * 2) - 1;
 
     //hipotes 1
-    for (int i = 0; w[origin] != '\0'; i++)
+    for (int i = 0, sizeOrigin = strlen(w); i < sizeOrigin; i++)
     {
-        wbl[i] = w[origin];
+        //atribuition
+        wbl[blank] = w[i];
 
-        //skip space blank;
-        wbl[++i] = '_';
+        //next space blank
+        if (blank < sizeBlank)
+        {
+            //position space blank
+            blank++;
 
-        //next origin
-        origin++;
+            wbl[blank] = ' ';
+
+            //next number, codition
+            blank++;
+        }
     }
 
-
-    //getttin last position
-    blankPosition = strlen(wbl);
-
-    //lat position
-    wbl[blankPosition - 1] = '\0';
+    //last position
+    wbl[sizeBlank] = '\0';
 
     return wbl;
 }
