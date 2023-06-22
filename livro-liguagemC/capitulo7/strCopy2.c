@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include<string.h>
 
-//depreciado
-//refatorar
+const int SIZE = 100;
+
 char *strCopy(char *orig, char *dest);
 
 int main(void)
 {
-    char *nome;
+    char nome[SIZE];
     printf("nome: "); scanf("%s", nome);
     
     int sizeNome = strlen(nome);
