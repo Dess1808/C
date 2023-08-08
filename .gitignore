@@ -57,3 +57,4 @@ dkms.conf
 /libcs50-11.0.1
 /.vscode
 /vcpkg
+debug.c
