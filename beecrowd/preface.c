@@ -36,7 +36,8 @@ int main(void)
     else if ((dividendo < 0) && (divisor < 0)) //-a, -b -> apenas o quoeficiente sera arredondado para cima
     {
         //preciso arredondar para cima quando o dividendo for maior negativamente
-        if (dividendo > divisor)
+        //a logica para os negativos e sendo o dividendo menor negativamente e divisor maior
+        if (dividendo < divisor)
             quoeficiente = ceil((dividendo / divisor) + 1);
         else
             quoeficiente  = dividendo / divisor;
