@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<math.h>
 
+
 int Abs(int x);
 void Show(int q, int r);
 
@@ -123,4 +124,7 @@ void Show(int q, int r)
     a, -b -> apenas subtrair o b absoluto pelo resto absoluto
 
     -a, -b -> apenas o quoeficiente sera arredondado para cima
+
+    hipotese: 3
+    
 */
