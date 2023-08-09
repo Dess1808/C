@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 int Abs(int x);
 
@@ -9,19 +10,22 @@ int main(void)
     //input
     scanf("%d%d", &a, &b);
 
-    if ((a % b) >= 0)
+    if ((a % b) >= 0) //resto
     {
         printf("%d %d\n", a/b, a%b);
     }
-    else 
+    else //resto negativo 
     {
         //q
-        if ((a / b) >= 0)
+        if ( ((float) a / (float)b) > 0.0)
             q = (a / b) + 1;//positivo
-        else    
+        else  
             q = (a / b) - 1;//nagativo
+        
+            
+        //rest
+        r = Abs(b) - Abs(a % b);
 
-        r = Abs(a % b); 
         printf("%d %d\n", q, r);
     }
 
