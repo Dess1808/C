@@ -10,8 +10,6 @@ int main(void)
     //input variables
     char inputString[SIZEDEFAULT];
     char caw_caw[] = "caw caw";
-    int testValue = 0;
-    int control = 0;
  
     while(1)
     {
