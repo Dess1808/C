@@ -1,34 +1,34 @@
+/*
+    1 * 4, 1 * 2, 1 * 1;
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
-const int SIZEDEFAULT = 8;
+const int SIZEDEFAULT = 3;
 
 
 int main(void)
 {
     //input variables
     char inputString[SIZEDEFAULT];
-    char caw_caw[] = "caw caw";
+    char stringFinal[SIZEDEFAULT];
  
-    while(1)
-    {
-        //input
-        scanf(" %[^\n]", inputString);
-        fflush(stdin);
+    //teste de identificação de caracteres
+    scanf(" %s", inputString);
 
-        //make control
-        if (strcmp(inputString, caw_caw))
-        {
-            //somando valores
-        }
-        else
-        {
-            //mostrando valores e encerrando o programa
-            break;
-        }
-        
+    //identificação da direita para a esquerda
+    for (int i = 0, size = strlen(inputString); i < size; i++)
+    {
+        if (inputString[i] == '-')
+            stringFinal[i] = 0;
+        else 
+            stringFinal[i] = 1;
     }
+
+
     
-    return 0;
+
+    return 0; 
 }
