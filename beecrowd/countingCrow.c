@@ -16,7 +16,7 @@ int main(void)
 {
     //control variables
     char inputString[SIZEDEFAULT];
-    char caw[] = "caw"; //verificar melhor forma
+    char caw[] = "caw caw"; //verificar melhor forma
     int stringFinal[SIZEDEFAULT];
     int sumTotal = 0;
 
@@ -24,9 +24,9 @@ int main(void)
     while(1)
     {    
         //input
-        scanf(" %s", inputString);
+        scanf(" %[^\n]", inputString);
 
-        //contition main
+        //contition main, compara string input com a caw caw
         if (!strcmp(inputString, caw))
         {
             //output
