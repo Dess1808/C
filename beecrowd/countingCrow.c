@@ -9,39 +9,39 @@
 #include<string.h>
 
 const int SIZEDEFAULT = 3;
-const int SIZEINPUT = 6;
+const int SIZEINPUT = 7;
 
 void CheckChar(char is[SIZEDEFAULT], int sf[SIZEDEFAULT], char c);
 
 int main(void)
 {
     //control variables
-    char inputString[SIZEINPUT];
-    char caw[] = "caw"; //verificar melhor forma
+    char inputString[SIZEINPUT]; //verificar melhor forma
+    char caw_caw[] = "caw caw";
+    char caw[] = "caw";
 
     int stringFinal[SIZEDEFAULT];
     int winningLottery[SIZEDEFAULT];
     
     int sumTotal = 0;
-    int countEyes = 0;
+    int countScreams = 0;
 
 
-    while(countEyes < 3)
+    while(countScreams < 3)
     {    
         //input
-        scanf(" %s", inputString);
+        scanf(" %[^\n]", inputString);
 
         //contition main, compara string input com a caw caw
-        if (!strcmp(inputString, caw))
+        if (!strcmp(inputString, caw_caw) || !strcmp(inputString, caw))
         {
             //output
-            //printf("%d\n", sumTotal);
 
-            winningLottery[countEyes] = sumTotal;
+            winningLottery[countScreams] = sumTotal;
 
             //reset sumTotal
             sumTotal = 0;
-            countEyes ++;
+            countScreams ++;
         }
         else 
         {
@@ -59,7 +59,7 @@ int main(void)
     //output winning values
     for (int i = 0; i < SIZEDEFAULT; i++)
     {
-        printf("%d\n", winningLottery[i]);
+        printf("%d\n",winningLottery[i]);
     }
 
     return 0; 
