@@ -77,7 +77,7 @@ void CheckChar(char is[SIZEDEFAULT], int sf[SIZEDEFAULT], char c)
         sf[0] = 0;
     }
 
-    //middles
+    //middle
     if (is[1] == c)
     {
         sf[1] = 2;
