@@ -14,7 +14,7 @@
 int main(int argc, char const *argv[])
 {
     //control varible
-    int theon, damage, toturing = 0;
+    int theon, damage, toturing, currentDamage = 0;
 
     //input
     scanf("%d", &theon);
@@ -29,7 +29,20 @@ int main(int argc, char const *argv[])
     }
 
     //damage calc
-    
+    for (int i = 0, size = theon; i < size; i++)
+    {
+        currentDamage = ramsay[i] * theon;
 
+        //verdade se o damage atual for menor
+        if (currentDamage < damage)
+        {
+            damage = currentDamage;
+            toturing = i + 1;
+        }
+    }
+
+    //output 
+    printf("%d\n", toturing);
+    
     return 0;
 }
