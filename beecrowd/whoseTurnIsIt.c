@@ -46,7 +46,7 @@ int main(int argc, char const *argv[])
         }
         
 
-        //calc values
+        //calc
         if (((n + m) % 2) == 0)
             printf("%s\n", nameEven);
         else 
