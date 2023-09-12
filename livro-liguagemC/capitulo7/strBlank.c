@@ -32,8 +32,6 @@ int main(void)
     //output
     printf("%s\n", result);
 
-    putchar('\n');
-
     return 0;
 }
 
