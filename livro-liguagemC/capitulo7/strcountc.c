@@ -10,7 +10,7 @@ int main(void)
     string exemplo = get_string("string: ");
     char letra = get_char("letra: ");
 
-    printf("%s (%c) - %i\n", exemplo, letra, strcountc(exemplo, letra));
+    printf("%s (%c) = %i\n", exemplo, letra, strcountc(exemplo, letra));
 
 }
 
