@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
     //input
     scanf("%s", s1);
     scanf("%s", s2);
-
+    
     if(!stricmp(s1, s2))
         printf("iguais\n");
     else 
