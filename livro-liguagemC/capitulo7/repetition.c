@@ -1,37 +1,47 @@
-/*
-    uma string recebe o caractere que não se encontram recepetidos
-*/
-
 #include<stdio.h>
 #include<string.h>
 
-char *repetition(char *w, char *wr);
-
-int main(int argc, char const *argv[])
+int main(void)
 {
-    //control variable
+    //controle variable
     char word[100];
-    char wordReturn[100];
+    char newCheck;
+    int indexNovaString = 0;
 
     //input
     scanf("%[^\n]", word);
 
+    //before input
+    char novaString[strlen(word)];
+
+    //size array
+    int nSize = strlen(word);
+
+    for(int i = 0; i < nSize; i++)
+    {
+        newCheck = word[i];
+
+        for(int j = 0; j < nSize; j++)
+        {
+            //test
+            if(word[j] == word[i] && j == i) //desconsiderando o caracter que estamos testando
+                continue;
+            else if (word[j] == word[i])
+            {
+                novaString[indexNovaString] = word[j];
+                indexNovaString++;
+
+                //primeira ocorrencia, sai do laco
+                break;
+            }
+        }
+    }  
+
+    //end string
+    novaString[indexNovaString] = '\0';
+
     //output
-    printf("%s\n", repetition(word, wordReturn));
+    printf("%s\n", novaString);  
 
     return 0;
-}
-
-char *repetition(char *w, char *wr)
-{
-    char chCheck;
-    int currenIndexReturn = 0;
-
-    //construir logica
-
-
-    //endstring
-    w[currenIndexReturn] = '\0';
-
-    return wr;   
 }
