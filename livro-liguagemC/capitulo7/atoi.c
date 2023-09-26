@@ -1,11 +1,12 @@
 /**
  * problema:
  * Recebe uma string e devolve o inteiro que nela esta representado
- * 
+ *
  * hipotese: tenho que separar em uma outra string os digitos para depois converte-los utilizando a funcao
- * atoi(), porem apenas a primeira ocorrencia de um inteiro, e se caso for encontrado sinal de subtração, deixar o numero 
+ * atoi(), porem apenas a primeira ocorrencia de um inteiro, e se caso for encontrado sinal de subtração, deixar o numero
  * negativo
- * 
+ *
+ * obs: retorna o primeiro inteiro encontrado
 */
 
 #include<stdio.h>
@@ -15,32 +16,39 @@
 
 int main(void)
 {
-    //control variable
-    char s[500];
+    char s[] = "-123abc123";
+    int i, n, numberIndex = 0;
 
-    //input
-    scanf("%s", s);
+    char number[strlen(s)];
 
-    int nSize = strlen(s);
-
-    int k = 0;
-    char sDigit[nSize];
-
-    //verificação de digitos na sting
-    for (int i = 0; i < nSize; i++)
+    for (i = 0, n = strlen(s); i < n; i++)
     {
-        if (isdigit(s[i]))
+        if (isdigit(s[i])) //primeiro digito encontrado
         {
-            sDigit[k] = s[i];
-            k++;
-        }
-    }    
+            //so deve para quando encontrar um caracter alfabetico
+            while(isdigit(s[i]) || i < n)
+            {
+                //atribuir na string de digitos
+                number[numberIndex] = s[i];
 
-    //end string
-    sDigit[k] = '\0';
+                //next value
+                i++;
+                numberIndex++;
+            }
+        }
+        else
+        {
+            continue;
+        }
+
+        //end string
+        number[numberIndex] = '\0';
+        break;
+    }
+
 
     //output
-    printf("%d\n", atoi(sDigit));
+    printf("%d\n", atoi(number));
 
     return 0;
 }
