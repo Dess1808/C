@@ -16,16 +16,30 @@
 
 int main(void)
 {
-    char s[] = "-123abc123";
+    char s[] = "+123";
     int i, n, numberIndex = 0;
 
     char number[strlen(s)];
 
     for (i = 0, n = strlen(s); i < n; i++)
     {
-        if (isdigit(s[i])) //primeiro digito encontrado
+        if ((isdigit(s[i])) || (s[i] == '-')) //primeiro digito encontrado, ou um sinal de subtração ou adição 
         {
-            //so deve para quando encontrar um caracter alfabetico
+            //check for signal of substration, primeiro ocorrencia
+            if (s[i] == '-')
+            {
+                //recebendo o sinal de subtração
+                number[numberIndex] = s[i];
+
+                //next value
+                numberIndex++;
+
+                //next value da string principal
+                i++;
+            }
+                
+
+            //so deve parar quando encontrar um caracter alfabetico
             while(isdigit(s[i]) || i < n)
             {
                 //atribuir na string de digitos
