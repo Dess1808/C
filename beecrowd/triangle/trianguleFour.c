@@ -32,12 +32,20 @@ int main(void)
 
     //logic
 
-    //cdb, teste debug
-    if ((Abs(a, b) < d) && (d < (c + b)))
+    //cdb
+    if ((Abs(d, b) < c) && (c < (d + b)))
+        printf("S\n");
+    //acd
+    else if ((Abs(c, d) < a) && (a < (c + d)))
+        printf("S\n");
+    //adb
+    else if ((Abs(d, b) < a) && (a < (d + b)))
+        printf("S\n");
+    //abc
+    else if ((Abs(b, c) < a) && (a < (b + c)))
         printf("S\n");
     else 
         printf("N\n");
-
 
     return 0;
 }
