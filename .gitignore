@@ -59,3 +59,7 @@ dkms.conf
 /vcpkg
 debug.c
 debug
+.DS_Store
+.README.md.icloud
+.swp
+livro-liguagemC/capitulo6/totoloto/.readme.md.icloud
