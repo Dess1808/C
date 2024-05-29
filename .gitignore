@@ -58,6 +58,7 @@ dkms.conf
 /.vscode
 /vcpkg
 debug.c
+debug.py
 debug
 .DS_Store
 .README.md.icloud
