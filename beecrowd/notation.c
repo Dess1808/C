@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<math.h>
 
 int main(void)
 {
@@ -7,42 +6,36 @@ int main(void)
 
     //variable control
     long double number = 0.0;
-    signed long long int whole_part = 0;
     int count = 0;
 
     //input
     scanf("%Lf", &number);
 
-    //primeira atribuicao
-    whole_part = number;
-
     //condition main
     if (number < 0) //negativos
     {
         //identification
-        if (whole_part > -1) //maior que -1 "multiplicar"
+        if (number > -1) //maior que -1 "multiplicar"
         {
-            while(whole_part > -1)
+            while(number > -1)
             {
-                whole_part = number * 10;
-                number = number * 10;
+                number *= 10;
                 count++;
             }
 
             //output
-            printf("%.4LfE-%d\n", number, count);
+            printf("%.4LfE-%02d\n", number, count);
         }
-        else if (whole_part < -10) //menor que -10 "dividir"
+        else if (number < -10) //menor que -10 "dividir"
         {
-           while(whole_part < -10)
+           while(number < -10)
             {
-                whole_part = number / 10;
-                number = number / 10;
+                number /= 10;
                 count++;
             }
 
             //output
-            printf("%.4LfE+%d\n", number, count);
+            printf("%.4LfE+%02d\n", number, count);
         }
         else //numero no range, output sem calculo, so formatacao
         {
@@ -51,33 +44,46 @@ int main(void)
     }
     else if (number == 0)//Fix 0
     {
-        printf("%.4LfE+00\n", number);
+        //necessary for oparation
+        char number_str[10];
+
+        //converte number '0'
+        sprintf(number_str, "%Lf", number);
+
+        //comparer array at number with char '-'
+        if (number_str[0] == '-')
+        {
+            printf("%.4LfE+00\n", number);
+        }
+        else
+        {
+            printf("+%.4LfE+00\n", number);
+        }
+        
     }
     else //positivos
     {
-        if (whole_part < 1) //menor que 1 "multiplicar"
+        if (number < 1) //menor que 1 "multiplicar"
         {
-            while(whole_part < 1)
+            while(number < 1)
             {
-                whole_part = number * 10;
-                number = number * 10;
+                number *= 10;
                 count++;
             }
 
             //output
-            printf("%.4LfE-%d\n", number, count);
+            printf("+%.4LfE-%02d\n", number, count);
         }
-        else if (whole_part > 10)//maior que 10 "dividir"
+        else if (number > 10)//maior que 10 "dividir"
         {
-            while(whole_part > 10)
+            while(number > 10)
             {
-                whole_part = number / 10;
-                number = number / 10;
+                number /= 10;
                 count++;
             }
 
             //output
-            printf("+%.4LfE+%d\n", number, count);
+            printf("+%.4LfE+%02d\n", number, count);
         }
         else //numero no range, output sem calculo, so formatacao
         {
@@ -87,8 +93,6 @@ int main(void)
 
     return 0;
 }
-
-
 
 /**
  * modos de operação
