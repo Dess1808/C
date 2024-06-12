@@ -5,7 +5,9 @@ int main(void)
     //control variables
     int length, side = 0;
 
-    //verificar calculo de perimetro!!!
+    //input
+    scanf("%d%d", &side, &length);
+    
     //output
     printf("%d\n", side * length);
 
